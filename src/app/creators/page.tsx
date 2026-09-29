@@ -1,7 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CreatorBanner from "@/components/creator/CreatorBanner";
-import Courses from "@/components/home/Courses";
+import CreatorCourses from "@/components/creator/CreatorCourses";
 
 export default function CreatorPage() {
   return (
@@ -12,8 +12,8 @@ export default function CreatorPage() {
         <CreatorBanner />
       </div>
 
-      {/* 2. Creator Products / Courses Section */}
-      <Courses />
+      {/* 2. Creator Products / Courses Section with Filter Bar */}
+      <CreatorCourses />
 
       {/* 3. Footer */}
       <Footer />
