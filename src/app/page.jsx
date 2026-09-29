@@ -11,8 +11,8 @@ import Testimonials from "@/components/home/Testimonials";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-white text-zinc-900 antialiased">
-      {/* 1. Top Banner Section with Royal Blue Grid Pattern - Full Screen */}
-      <div className="hero-grid-pattern relative w-full overflow-hidden min-h-screen min-h-[100dvh] flex flex-col justify-between">
+      {/* 1. Top Banner Section with Royal Blue Grid Pattern - Full Screen on Tablet/Desktop, Natural on Mobile */}
+      <div className="hero-grid-pattern relative w-full overflow-hidden md:min-h-screen md:min-h-[100dvh] flex flex-col justify-between">
         <Navbar />
         <Hero />
       </div>
