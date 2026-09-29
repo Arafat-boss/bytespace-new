@@ -9,14 +9,17 @@ export interface CourseData {
   slug: string;
   title: string;
   subtitle: string;
+  category: string;
+  categories: string[];
   instructor: string;
   instructorRole: string;
   instructorAvatar: string;
   rating: number;
   reviewsCount: number;
   studentsCount: string;
-  level: string;
+  level: string; // "Beginner" | "Intermediate" | "Advanced"
   price: string;
+  priceNumeric: number;
   period: string;
   image: string;
   videoPreviewImage: string;
@@ -36,6 +39,8 @@ export const coursesData: CourseData[] = [
     slug: "learn-figma-from-basic",
     title: "Learn Figma from Basic",
     subtitle: "Master UI/UX Design from Wireframes to Interactive Prototypes",
+    category: "UI/UX Design",
+    categories: ["UI/UX Design", "Featured", "Design"],
     instructor: "purepearl studio",
     instructorRole: "UI/UX Design Specialist",
     instructorAvatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
@@ -44,6 +49,7 @@ export const coursesData: CourseData[] = [
     studentsCount: "340 Students",
     level: "Beginner",
     price: "$25",
+    priceNumeric: 25,
     period: "/lifetime",
     image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=600&h=400&fit=crop&q=80",
     videoPreviewImage: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=1200&h=800&fit=crop&q=80",
@@ -84,6 +90,8 @@ export const coursesData: CourseData[] = [
     slug: "build-digital-asset",
     title: "Build Digital Asset: A Comprehensive Guide",
     subtitle: "Unlock the Power of Digital Creation with Expert Guidance",
+    category: "UI/UX Design",
+    categories: ["UI/UX Design", "Featured", "Creative Marketing"],
     instructor: "purepearl studio",
     instructorRole: "Professional Creator",
     instructorAvatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
@@ -92,6 +100,7 @@ export const coursesData: CourseData[] = [
     studentsCount: "199 Students",
     level: "Intermediate",
     price: "$25",
+    priceNumeric: 25,
     period: "/lifetime",
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=400&fit=crop&q=80",
     videoPreviewImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop",
@@ -131,6 +140,8 @@ export const coursesData: CourseData[] = [
     slug: "the-power-of-big-data",
     title: "the Power of Big Data: Analytics & Insights",
     subtitle: "Transform Complex Data into Scalable Decisions and High-Impact Visualizations",
+    category: "Data Science",
+    categories: ["Data Science", "Featured", "Marketing"],
     instructor: "purepearl studio",
     instructorRole: "Data Science & BI Lead",
     instructorAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
@@ -138,7 +149,8 @@ export const coursesData: CourseData[] = [
     reviewsCount: 310,
     studentsCount: "520 Students",
     level: "Advanced",
-    price: "$25",
+    price: "$35",
+    priceNumeric: 35,
     period: "/lifetime",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&q=80",
     videoPreviewImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop&q=80",
@@ -178,6 +190,8 @@ export const coursesData: CourseData[] = [
     slug: "balancing-productivity-and-wellbeing",
     title: "Balancing Productivity and Wellbeing",
     subtitle: "Optimize Daily Focus, Time Management, and High-Performance Habits",
+    category: "Productivity",
+    categories: ["Productivity", "Featured", "Social Media"],
     instructor: "purepearl studio",
     instructorRole: "Productivity Coach",
     instructorAvatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
@@ -185,7 +199,8 @@ export const coursesData: CourseData[] = [
     reviewsCount: 145,
     studentsCount: "280 Students",
     level: "Beginner",
-    price: "$25",
+    price: "$20",
+    priceNumeric: 20,
     period: "/lifetime",
     image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop&q=80",
     videoPreviewImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&h=800&fit=crop&q=80",
@@ -224,6 +239,8 @@ export const coursesData: CourseData[] = [
     slug: "mastering-money-management",
     title: "Mastering Money Management: Financial Freedom",
     subtitle: "Smart Budgeting, Wealth Creation, and Strategic Investment Tactics",
+    category: "Marketing",
+    categories: ["Marketing", "Featured", "Creative Marketing"],
     instructor: "purepearl studio",
     instructorRole: "Financial Consultant",
     instructorAvatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
@@ -231,7 +248,8 @@ export const coursesData: CourseData[] = [
     reviewsCount: 410,
     studentsCount: "670 Students",
     level: "Intermediate",
-    price: "$25",
+    price: "$30",
+    priceNumeric: 30,
     period: "/lifetime",
     image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=600&h=400&fit=crop&q=80",
     videoPreviewImage: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&h=800&fit=crop&q=80",
@@ -270,6 +288,8 @@ export const coursesData: CourseData[] = [
     slug: "from-idea-to-startup-success",
     title: "From Idea to Startup Success: Founder's Playbook",
     subtitle: "Validate, Build, and Scale Your Tech Business from Scratch",
+    category: "Creative Marketing",
+    categories: ["Creative Marketing", "Featured", "Marketing"],
     instructor: "purepearl studio",
     instructorRole: "Startup Founder & Advisor",
     instructorAvatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop",
@@ -277,7 +297,8 @@ export const coursesData: CourseData[] = [
     reviewsCount: 195,
     studentsCount: "310 Students",
     level: "Advanced",
-    price: "$25",
+    price: "$40",
+    priceNumeric: 40,
     period: "/lifetime",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop&q=80",
     videoPreviewImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=800&fit=crop&q=80",
@@ -310,11 +331,592 @@ export const coursesData: CourseData[] = [
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop&q=80",
       "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80",
     ]
+  },
+  {
+    id: 7,
+    slug: "music-production-masterclass",
+    title: "Electronic Music Production & Beatmaking Masterclass",
+    subtitle: "From Melodic Arrangement to Mixing and Industry-Standard Mastering",
+    category: "Music",
+    categories: ["Music", "Featured"],
+    instructor: "purepearl studio",
+    instructorRole: "Audio Engineer & Producer",
+    instructorAvatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
+    rating: 4.9,
+    reviewsCount: 280,
+    studentsCount: "420 Students",
+    level: "Beginner",
+    price: "$30",
+    priceNumeric: 30,
+    period: "/lifetime",
+    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&h=400&fit=crop&q=80",
+    videoPreviewImage: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1200&h=800&fit=crop&q=80",
+    lessons: "17 Lessons",
+    duration: "2 hours 16 mins",
+    comments: "59 Comments",
+    totalLessonsInfo: "24 Lessons (5 hours 30 mins)",
+    description: [
+      "Dive into music creation with practical hands-on DAW workflows, sound synthesis, MIDI sequencing, and modern beat craft.",
+      "Learn essential EQ balancing, sidechain compression, vocal mixing, and final stereo bus mastering techniques."
+    ],
+    keyPoints: [
+      "Digital Audio Workstation Essentials",
+      "Drum Programming and Groove Synthesis",
+      "Melody Writing and Chord Progressions",
+      "Vocal Tuning and Spatial Processing",
+      "Dynamic Mixing and Spectral Separation",
+      "Mastering for Spotify, Apple Music and Vinyl"
+    ],
+    lessonsList: [
+      { id: "01", title: "DAW Setup & Sound Library Structuring", duration: "14 mins" },
+      { id: "02", title: "Rhythm Design and Bassline Layering", duration: "20 mins" },
+      { id: "03", title: "Harmonic Arrangements & Lead Hooks", duration: "18 mins" },
+    ],
+    sneakPeakImages: [
+      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=300&fit=crop&q=80",
+    ]
+  },
+  {
+    id: 8,
+    slug: "digital-drawing-and-painting",
+    title: "Digital Drawing & Painting with Procreate",
+    subtitle: "Expressive Brushwork, Anatomy, Color Harmony, and Concept Art",
+    category: "Drawing & Painting",
+    categories: ["Drawing & Painting", "Featured", "Design"],
+    instructor: "purepearl studio",
+    instructorRole: "Concept Artist & Illustrator",
+    instructorAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+    rating: 4.8,
+    reviewsCount: 350,
+    studentsCount: "510 Students",
+    level: "Beginner",
+    price: "$25",
+    priceNumeric: 25,
+    period: "/lifetime",
+    image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=400&fit=crop&q=80",
+    videoPreviewImage: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&h=800&fit=crop&q=80",
+    lessons: "17 Lessons",
+    duration: "2 hours 16 mins",
+    comments: "59 Comments",
+    totalLessonsInfo: "28 Lessons (6 hours 45 mins)",
+    description: [
+      "Unleash your artistic imagination with digital illustration techniques. Master sketching, shading, dynamic perspective, and luminous color blending.",
+      "Follow step-by-step painting demonstrations to create stunning fantasy landscapes, portraits, and expressive character concepts."
+    ],
+    keyPoints: [
+      "Custom Brush Engines and Texture Creation",
+      "Lighting Schemes: Ambient, Direct, and Rim Lighting",
+      "Human Figure and Gesture Sketching",
+      "Color Temperature and Mood Palette Curation",
+      "Layer Blending Modes for Magical Effects",
+      "High-Resolution Export for Prints and Portfolios"
+    ],
+    lessonsList: [
+      { id: "01", title: "Canvas Calibration & Brush Mechanics", duration: "12 mins" },
+      { id: "02", title: "Values, Contrast, and Form Rendering", duration: "25 mins" },
+      { id: "03", title: "Applying Vibrant Color Palettes", duration: "21 mins" },
+    ],
+    sneakPeakImages: [
+      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=400&h=300&fit=crop&q=80",
+    ]
+  },
+  {
+    id: 9,
+    slug: "modern-growth-marketing",
+    title: "Modern Growth Marketing & Viral Strategies",
+    subtitle: "Scale Customer Acquisition, Funnel Conversion, and Organic Reach",
+    category: "Marketing",
+    categories: ["Marketing", "Featured", "Creative Marketing"],
+    instructor: "purepearl studio",
+    instructorRole: "Growth Strategist",
+    instructorAvatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
+    rating: 4.7,
+    reviewsCount: 190,
+    studentsCount: "390 Students",
+    level: "Intermediate",
+    price: "$35",
+    priceNumeric: 35,
+    period: "/lifetime",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&q=80",
+    videoPreviewImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop&q=80",
+    lessons: "17 Lessons",
+    duration: "2 hours 16 mins",
+    comments: "59 Comments",
+    totalLessonsInfo: "36 Lessons (9 hours 15 mins)",
+    description: [
+      "Master the science and psychology behind viral marketing campaigns, conversion rate optimization (CRO), and omni-channel acquisition funnels.",
+      "Learn how modern growth teams test rapid experiments, reduce CAC (Customer Acquisition Cost), and maximize lifetime customer value (LTV)."
+    ],
+    keyPoints: [
+      "Viral Loops and Product-Led Growth Mechanisms",
+      "High-Converting Landing Page Frameworks",
+      "A/B Testing Methodologies and Statistical Significance",
+      "Retention Engineering and Churn Reduction",
+      "Performance Ad Creative Production",
+      "Automated Email & Lifecycle Marketing Systems"
+    ],
+    lessonsList: [
+      { id: "01", title: "The Modern Growth Funnel Anatomy", duration: "16 mins" },
+      { id: "02", title: "Building Sticky Product Loops", duration: "22 mins" },
+      { id: "03", title: "Conversion Optimization Blueprint", duration: "19 mins" },
+    ],
+    sneakPeakImages: [
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=300&fit=crop&q=80",
+    ]
+  },
+  {
+    id: 10,
+    slug: "3d-motion-graphics-animation",
+    title: "3D Motion Graphics & Animation in Blender",
+    subtitle: "Create Cinematic Visual Effects, Physics Simulations, and Renders",
+    category: "Animation",
+    categories: ["Animation", "Featured", "Design"],
+    instructor: "purepearl studio",
+    instructorRole: "3D Motion Designer",
+    instructorAvatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
+    rating: 4.9,
+    reviewsCount: 420,
+    studentsCount: "630 Students",
+    level: "Advanced",
+    price: "$45",
+    priceNumeric: 45,
+    period: "/lifetime",
+    image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=600&h=400&fit=crop&q=80",
+    videoPreviewImage: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=1200&h=800&fit=crop&q=80",
+    lessons: "17 Lessons",
+    duration: "2 hours 16 mins",
+    comments: "59 Comments",
+    totalLessonsInfo: "44 Lessons (13 hours)",
+    description: [
+      "Bring 3D worlds to life using Blender's modern animation and geometry node pipelines. Design dynamic broadcast motion graphics, abstract loops, and photorealistic product commercials.",
+      "Explore lighting, texturing with PBR shaders, rigid body dynamics, fluid simulations, and GPU render optimization in Cycles."
+    ],
+    keyPoints: [
+      "Blender Node-Based Shading & Procedural Materials",
+      "Geometry Nodes for Complex Motion Graphics",
+      "Keyframe Animation & Graph Editor Curve Smoothing",
+      "Rigid Body and Cloth Physics Simulation",
+      "Cinematic Camera Movement and Focal Stacking",
+      "Compositing and Color Grading in Post-Production"
+    ],
+    lessonsList: [
+      { id: "01", title: "Blender 4.0 Interface & Modeling Basics", duration: "18 mins" },
+      { id: "02", title: "Lighting and Shading Photorealistic Scenes", duration: "26 mins" },
+      { id: "03", title: "Geometry Nodes Animation Setup", duration: "24 mins" },
+    ],
+    sneakPeakImages: [
+      "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=300&fit=crop&q=80",
+    ]
+  },
+  {
+    id: 11,
+    slug: "social-media-brand-architecture",
+    title: "Social Media Brand Architecture & Monetization",
+    subtitle: "Grow an Engaged Audience Across Instagram, YouTube, and TikTok",
+    category: "Social Media",
+    categories: ["Social Media", "Featured", "Creative Marketing"],
+    instructor: "purepearl studio",
+    instructorRole: "Content Director",
+    instructorAvatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop",
+    rating: 4.8,
+    reviewsCount: 310,
+    studentsCount: "480 Students",
+    level: "Beginner",
+    price: "$25",
+    priceNumeric: 25,
+    period: "/lifetime",
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop&q=80",
+    videoPreviewImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&h=800&fit=crop&q=80",
+    lessons: "17 Lessons",
+    duration: "2 hours 16 mins",
+    comments: "59 Comments",
+    totalLessonsInfo: "30 Lessons (7 hours 20 mins)",
+    description: [
+      "Learn the exact frameworks used by top digital creators to build recognizable personal brands, craft viral short-form video hooks, and monetize with sponsorship deals and digital product launches.",
+      "Understand platform algorithms, content scheduling engines, audience psychology, and community building."
+    ],
+    keyPoints: [
+      "Brand Positioning & Niche Domination",
+      "Short-Form Video Production & Hook Formulas",
+      "Algorithm Mastery: YouTube Shorts, Reels & TikTok",
+      "Brand Sponsorship Pitching & Media Kit Creation",
+      "Launching Digital Products & Memberships",
+      "Analytics Tracking and Community Engagement Systems"
+    ],
+    lessonsList: [
+      { id: "01", title: "Defining Your Unique Brand Narrative", duration: "13 mins" },
+      { id: "02", title: "Scripting High-Retention 60-Second Videos", duration: "17 mins" },
+      { id: "03", title: "Monetization and Brand Partnership Strategy", duration: "21 mins" },
+    ],
+    sneakPeakImages: [
+      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop&q=80",
+    ]
+  },
+  {
+    id: 12,
+    slug: "culinary-artistry-gourmet-cooking",
+    title: "Culinary Artistry: Master Gourmet Home Cooking",
+    subtitle: "Elevate Flavors, Knife Skills, Plating Aesthetics, and Modern Gastronomy",
+    category: "Cooking",
+    categories: ["Cooking", "Featured"],
+    instructor: "purepearl studio",
+    instructorRole: "Executive Chef",
+    instructorAvatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
+    rating: 4.9,
+    reviewsCount: 260,
+    studentsCount: "350 Students",
+    level: "Beginner",
+    price: "$20",
+    priceNumeric: 20,
+    period: "/lifetime",
+    image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=400&fit=crop&q=80",
+    videoPreviewImage: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1200&h=800&fit=crop&q=80",
+    lessons: "17 Lessons",
+    duration: "2 hours 16 mins",
+    comments: "59 Comments",
+    totalLessonsInfo: "22 Lessons (5 hours 45 mins)",
+    description: [
+      "Transform everyday cooking into restaurant-grade culinary art. Master fundamental French and Asian cooking techniques, sauce emulsions, knife precision, and multi-course menu timing.",
+      "Discover the science of seasoning balance: salt, acid, fat, and heat harmony."
+    ],
+    keyPoints: [
+      "Professional Knife Handling & Prep Efficiency",
+      "Mother Sauces and Modern Emulsions",
+      "Meat Searing, Sous-Vide, and Temperature Precision",
+      "Artisanal Pasta and Dough Making",
+      "Gourmet Plating Composition & Micro-Greens",
+      "Wine Pairing and Flavor Architecture"
+    ],
+    lessonsList: [
+      { id: "01", title: "Essential Knife Skills & Kitchen Mise en Place", duration: "15 mins" },
+      { id: "02", title: "Mastering Sauces and Flavor Extraction", duration: "22 mins" },
+      { id: "03", title: "Precision Protein Cooking and Plating", duration: "19 mins" },
+    ],
+    sneakPeakImages: [
+      "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1507048821117-6573c21c4388?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400&h=300&fit=crop&q=80",
+    ]
+  },
+  {
+    id: 13,
+    slug: "fullstack-react-nextjs-mastery",
+    title: "Full-Stack Web Development with React & Next.js",
+    subtitle: "Build High-Performance Production Web Apps with TypeScript & Tailwind",
+    category: "UI/UX Design",
+    categories: ["UI/UX Design", "Featured", "Design"],
+    instructor: "purepearl studio",
+    instructorRole: "Full-Stack Architect",
+    instructorAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+    rating: 4.9,
+    reviewsCount: 520,
+    studentsCount: "890 Students",
+    level: "Intermediate",
+    price: "$40",
+    priceNumeric: 40,
+    period: "/lifetime",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop&q=80",
+    videoPreviewImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=800&fit=crop&q=80",
+    lessons: "17 Lessons",
+    duration: "2 hours 16 mins",
+    comments: "59 Comments",
+    totalLessonsInfo: "60 Lessons (18 hours)",
+    description: [
+      "Master modern web engineering with Next.js App Router, Server Components, TypeScript, Tailwind CSS, PostgreSQL, and serverless deployment.",
+      "Construct complete scalable applications featuring authentication, payments, database transactions, and real-time state sync."
+    ],
+    keyPoints: [
+      "Next.js App Router Architecture & React 19 Features",
+      "TypeScript Type Safety and Schema Validation",
+      "Tailwind CSS Layouts and Component Design Systems",
+      "Database Modeling with Prisma and PostgreSQL",
+      "Stripe Payment Processing & Webhooks",
+      "Server-Side Rendering, Caching, and SEO Optimization"
+    ],
+    lessonsList: [
+      { id: "01", title: "App Router & Server Component Foundations", duration: "20 mins" },
+      { id: "02", title: "Building Responsive UI with Tailwind", duration: "25 mins" },
+      { id: "03", title: "API Routes, Authentication, and Database Sync", duration: "30 mins" },
+    ],
+    sneakPeakImages: [
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop&q=80",
+    ]
+  },
+  {
+    id: 14,
+    slug: "creative-brand-strategy",
+    title: "Creative Brand Strategy & Visual Storytelling",
+    subtitle: "Craft Iconic Identity Systems, Compelling Narratives, and Brand Guidelines",
+    category: "Creative Marketing",
+    categories: ["Creative Marketing", "Featured", "Marketing"],
+    instructor: "purepearl studio",
+    instructorRole: "Creative Director",
+    instructorAvatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
+    rating: 4.8,
+    reviewsCount: 215,
+    studentsCount: "340 Students",
+    level: "Intermediate",
+    price: "$30",
+    priceNumeric: 30,
+    period: "/lifetime",
+    image: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&h=400&fit=crop&q=80",
+    videoPreviewImage: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=1200&h=800&fit=crop&q=80",
+    lessons: "17 Lessons",
+    duration: "2 hours 16 mins",
+    comments: "59 Comments",
+    totalLessonsInfo: "34 Lessons (8 hours 30 mins)",
+    description: [
+      "Learn how premium brands command loyalty and prestige. Develop holistic brand identity systems including voice, typography, color symbolism, and memorable brand stories.",
+      "Create pitch decks that win high-value corporate branding contracts."
+    ],
+    keyPoints: [
+      "Brand Archetypes and Emotional Positioning",
+      "Visual Identity System Guidelines and Style Guides",
+      "Copywriting Voice and Tone Matrix",
+      "Packaging Design and Physical Touchpoints",
+      "Client Presentation and Stakeholder Buy-in",
+      "Brand Guidelines Documentation Creation"
+    ],
+    lessonsList: [
+      { id: "01", title: "Brand Discovery & Core Archetype Analysis", duration: "16 mins" },
+      { id: "02", title: "Visual System Architecture and Palette Setup", duration: "24 mins" },
+      { id: "03", title: "Presenting Brand Guidelines to Enterprise Clients", duration: "18 mins" },
+    ],
+    sneakPeakImages: [
+      "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop&q=80",
+    ]
+  },
+  {
+    id: 15,
+    slug: "cinematic-photography-portrait-lighting",
+    title: "Cinematic Photography & Portrait Lighting",
+    subtitle: "Master Studio Lighting, Lens Selection, Color Grading, and Retouching",
+    category: "Drawing & Painting",
+    categories: ["Drawing & Painting", "Featured"],
+    instructor: "purepearl studio",
+    instructorRole: "Commercial Photographer",
+    instructorAvatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
+    rating: 4.7,
+    reviewsCount: 180,
+    studentsCount: "290 Students",
+    level: "Intermediate",
+    price: "$25",
+    priceNumeric: 25,
+    period: "/lifetime",
+    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop&q=80",
+    videoPreviewImage: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1200&h=800&fit=crop&q=80",
+    lessons: "17 Lessons",
+    duration: "2 hours 16 mins",
+    comments: "59 Comments",
+    totalLessonsInfo: "30 Lessons (7 hours)",
+    description: [
+      "Capture emotive, film-like portraiture with natural and strobe lighting. Master camera settings, focal length selection, model posing, and Lightroom/Photoshop grading.",
+      "Build a breathtaking fashion and portrait photography portfolio."
+    ],
+    keyPoints: [
+      "Three-Point Studio Lighting and Modifiers",
+      "Natural Golden Hour and Direct Sun Control",
+      "Camera Optics, Aperture, and Depth of Field",
+      "Editorial Model Posing and Direction",
+      "Color Grading in Adobe Lightroom Classic",
+      "Frequency Separation and High-End Skin Retouching"
+    ],
+    lessonsList: [
+      { id: "01", title: "Mastering Manual Camera Mode & Exposure", duration: "14 mins" },
+      { id: "02", title: "Setting Up Strobe and Softbox Lighting", duration: "20 mins" },
+      { id: "03", title: "Editorial Color Grading and Polish", duration: "22 mins" },
+    ],
+    sneakPeakImages: [
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?w=400&h=300&fit=crop&q=80",
+    ]
+  },
+  {
+    id: 16,
+    slug: "character-animation-storyboarding",
+    title: "Character Animation & 2D Storyboarding",
+    subtitle: "Bring Animated Characters to Life with 12 Principles of Animation",
+    category: "Animation",
+    categories: ["Animation", "Featured", "Drawing & Painting"],
+    instructor: "purepearl studio",
+    instructorRole: "Lead 2D Animator",
+    instructorAvatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop",
+    rating: 4.8,
+    reviewsCount: 240,
+    studentsCount: "380 Students",
+    level: "Beginner",
+    price: "$30",
+    priceNumeric: 30,
+    period: "/lifetime",
+    image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=600&h=400&fit=crop&q=80",
+    videoPreviewImage: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1200&h=800&fit=crop&q=80",
+    lessons: "17 Lessons",
+    duration: "2 hours 16 mins",
+    comments: "59 Comments",
+    totalLessonsInfo: "28 Lessons (6 hours 30 mins)",
+    description: [
+      "Learn the core fundamentals of character motion, anticipation, squash & stretch, and storytelling through expressive keyframe animation.",
+      "Design storyboards and animatics for animated short films and gaming cutscenes."
+    ],
+    keyPoints: [
+      "12 Principles of Classic Animation Applied to Digital",
+      "Walk Cycles, Run Cycles, and Weight Distribution",
+      "Lip Sync and Facial Acting Performance",
+      "Dynamic Storyboard Camera Staging",
+      "Character Model Sheets and Expression Guides",
+      "Final Animatics Assembly and Audio Sync"
+    ],
+    lessonsList: [
+      { id: "01", title: "Squash & Stretch and Bouncing Ball Physics", duration: "16 mins" },
+      { id: "02", title: "Animating a Fluid 8-Frame Walk Cycle", duration: "25 mins" },
+      { id: "03", title: "Facial Expressions and Dialogue Lip Sync", duration: "21 mins" },
+    ],
+    sneakPeakImages: [
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=400&h=300&fit=crop&q=80",
+    ]
+  },
+  {
+    id: 17,
+    slug: "acoustic-audio-engineering",
+    title: "Acoustic & Audio Engineering Essentials",
+    subtitle: "Studio Acoustics Calibration, Analog Gear, and Vocal Tracking",
+    category: "Music",
+    categories: ["Music", "Featured"],
+    instructor: "purepearl studio",
+    instructorRole: "Acoustic Engineer",
+    instructorAvatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
+    rating: 4.8,
+    reviewsCount: 165,
+    studentsCount: "270 Students",
+    level: "Advanced",
+    price: "$35",
+    priceNumeric: 35,
+    period: "/lifetime",
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&h=400&fit=crop&q=80",
+    videoPreviewImage: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1200&h=800&fit=crop&q=80",
+    lessons: "17 Lessons",
+    duration: "2 hours 16 mins",
+    comments: "59 Comments",
+    totalLessonsInfo: "32 Lessons (8 hours)",
+    description: [
+      "Master the technical acoustics of recording spaces, microphone polar patterns, analog preamps, and pristine vocal capture.",
+      "Treat your room acoustics effectively and eliminate unwanted reflections and standing waves."
+    ],
+    keyPoints: [
+      "Room Acoustic Treatment and Bass Traps",
+      "Condenser vs Dynamic vs Ribbon Microphones",
+      "Gain Staging and Analog Preamp Saturation",
+      "Vocal Chain Compression and De-Essing",
+      "Multi-Mic Phase Alignment",
+      "Hardware Outboard Gear Integration"
+    ],
+    lessonsList: [
+      { id: "01", title: "Measuring Room Acoustics & Frequency Response", duration: "18 mins" },
+      { id: "02", title: "Microphone Placement for Live Instruments", duration: "24 mins" },
+      { id: "03", title: "Dialing In Hardware Compressors and Preamps", duration: "20 mins" },
+    ],
+    sneakPeakImages: [
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=300&fit=crop&q=80",
+    ]
+  },
+  {
+    id: 18,
+    slug: "artisanal-baking-and-pastry",
+    title: "Artisanal Baking & French Pastry Techniques",
+    subtitle: "From Sourdough Fermentation to Delicate Macarons & Croissants",
+    category: "Cooking",
+    categories: ["Cooking", "Featured"],
+    instructor: "purepearl studio",
+    instructorRole: "Master Pastry Chef",
+    instructorAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+    rating: 4.9,
+    reviewsCount: 330,
+    studentsCount: "490 Students",
+    level: "Intermediate",
+    price: "$25",
+    priceNumeric: 25,
+    period: "/lifetime",
+    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=400&fit=crop&q=80",
+    videoPreviewImage: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1200&h=800&fit=crop&q=80",
+    lessons: "17 Lessons",
+    duration: "2 hours 16 mins",
+    comments: "59 Comments",
+    totalLessonsInfo: "26 Lessons (6 hours)",
+    description: [
+      "Discover the precise chemistry and artistry of French patisserie and wild yeast baking. Create flaky laminated croissants, crusty sourdough loaves, and flawless macarons.",
+      "Learn temperature control, gluten development, and delicate pastry assembly."
+    ],
+    keyPoints: [
+      "Wild Sourdough Starter Maintenance and Fermentation",
+      "Laminated Butter Dough and Flaky Croissant Layers",
+      "French Macarons Italian Meringue Method",
+      "Chocolate Tempering and Ganache Emulsions",
+      "Artisanal Bread Scoring and Steam Baking",
+      "Pastry Presentation and Tart Construction"
+    ],
+    lessonsList: [
+      { id: "01", title: "Sourdough Starter Chemistry & Flour Science", duration: "16 mins" },
+      { id: "02", title: "The Art of Butter Lamination & Croissants", duration: "28 mins" },
+      { id: "03", title: "Perfect Macaron Shells and Rich Fillings", duration: "22 mins" },
+    ],
+    sneakPeakImages: [
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1507048821117-6573c21c4388?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400&h=300&fit=crop&q=80",
+    ]
   }
 ];
 
 export function getCourseById(id: number | string): CourseData {
+  if (!id) return coursesData[0];
+  
   const numericId = typeof id === "string" ? parseInt(id, 10) : id;
-  const course = coursesData.find((c) => c.id === numericId || c.slug === id);
-  return course || coursesData[1]; // fallback to course 2 (Build Digital Asset)
+  
+  if (!isNaN(numericId) && numericId > 0) {
+    // Exact match first
+    const exact = coursesData.find((c) => c.id === numericId);
+    if (exact) return exact;
+
+    // Normalizing index for modulo if id > coursesData.length
+    const normalizedId = ((numericId - 1) % coursesData.length) + 1;
+    const course = coursesData.find((c) => c.id === normalizedId);
+    if (course) return course;
+  }
+  
+  const courseBySlug = coursesData.find((c) => 
+    c.slug === id || 
+    c.title.toLowerCase().includes(String(id).toLowerCase())
+  );
+  return courseBySlug || coursesData[0];
 }

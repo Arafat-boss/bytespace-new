@@ -1,30 +1,28 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import { Search as SearchIcon, ChevronDown } from "lucide-react";
 
-export default function SearchBanner({
-  onSearch,
-  selectedType = "Courses",
-  onTypeChange,
-}: {
-  onSearch?: (query: string) => void;
+interface SearchBannerProps {
+  query?: string;
+  onSearchChange?: (query: string) => void;
   selectedType?: string;
   onTypeChange?: (type: string) => void;
-}) {
-  const searchParams = useSearchParams();
-  const [query, setQuery] = useState(searchParams.get("q") || "");
+}
+
+export default function SearchBanner({
+  query = "",
+  onSearchChange,
+  selectedType = "Courses",
+  onTypeChange,
+}: SearchBannerProps) {
+  const [localQuery, setLocalQuery] = useState(query);
   const [currentType, setCurrentType] = useState(selectedType);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
-    const q = searchParams.get("q");
-    if (q !== null) {
-      setQuery(q);
-      onSearch?.(q);
-    }
-  }, [searchParams]);
+    setLocalQuery(query);
+  }, [query]);
 
   const types = ["Courses", "Creators", "Categories", "Articles"];
 
@@ -34,9 +32,15 @@ export default function SearchBanner({
     onTypeChange?.(type);
   };
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setLocalQuery(val);
+    onSearchChange?.(val);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSearch?.(query);
+    onSearchChange?.(localQuery);
   };
 
   return (
@@ -58,13 +62,10 @@ export default function SearchBanner({
           </div>
           <input
             type="text"
-            value={query}
-            onChange={(e) => {
-              setQuery(e.target.value);
-              onSearch?.(e.target.value);
-            }}
-            placeholder="Search"
-            className="w-full rounded-full bg-white py-3 sm:py-3.5 pl-10 pr-4 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-white/50"
+            value={localQuery}
+            onChange={handleInputChange}
+            placeholder="Search courses, topics, keywords..."
+            className="w-full rounded-full bg-white py-3 sm:py-3.5 pl-10 pr-4 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#D2FF00]"
           />
         </div>
 
@@ -73,10 +74,14 @@ export default function SearchBanner({
           <button
             type="button"
             onClick={() => setIsDropdownOpen((prev) => !prev)}
-            className="inline-flex items-center gap-2 rounded-full bg-[#D2FF00] px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-bold text-zinc-950 shadow-sm transition-all hover:bg-[#c2ed00] hover:scale-105 active:scale-95"
+            className="inline-flex items-center gap-2 rounded-full bg-[#D2FF00] px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-bold text-zinc-950 shadow-sm transition-all hover:bg-[#c2ed00] hover:scale-105 active:scale-95 cursor-pointer"
           >
             <span>{currentType}</span>
-            <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`} />
+            <ChevronDown
+              className={`h-4 w-4 transition-transform duration-200 ${
+                isDropdownOpen ? "rotate-180" : ""
+              }`}
+            />
           </button>
 
           {/* Dropdown Options Menu */}
@@ -87,7 +92,7 @@ export default function SearchBanner({
                   key={type}
                   type="button"
                   onClick={() => handleTypeSelect(type)}
-                  className={`w-full rounded-xl px-3.5 py-2 text-xs font-semibold transition text-left ${
+                  className={`w-full rounded-xl px-3.5 py-2 text-xs font-semibold transition text-left cursor-pointer ${
                     currentType === type
                       ? "bg-[#D2FF00] text-zinc-950 font-bold"
                       : "text-zinc-700 hover:bg-zinc-100"

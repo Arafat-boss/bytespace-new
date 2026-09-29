@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Star, BarChart2 } from "lucide-react";
+import { coursesData } from "@/data/courses";
 
 export default function Courses() {
   const [activeCategory, setActiveCategory] = useState("Featured");
@@ -17,16 +18,10 @@ export default function Courses() {
     "Social Media",
     "UI/UX Design",
     "Creative Marketing",
-    "Digital Illustration",
-    "Film & Video",
-    "Crafts",
-    "Freelance & Entrepreneurship",
-    "Graphic Design",
-    "Photography",
-    "Productivity",
+    "Cooking",
     "Web Development",
     "Data Science",
-    "Cooking",
+    "Productivity",
   ];
 
   const studentAvatars = [
@@ -36,86 +31,19 @@ export default function Courses() {
     "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces&q=80",
   ];
 
-  const courses = [
-    {
-      id: 1,
-      image: "https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      title: "Learn Figma from Basic",
-      instructor: "purepearl studio",
-      rating: 4.5,
-      lessons: "17 Lessons",
-      duration: "2 hours 16 mins",
-      comments: "59 Comments",
-      level: "Beginner",
-      price: "$25",
-      period: "/lifetime",
-    },
-    {
-      id: 2,
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=400&fit=crop&q=80",
-      title: "Build Digital Asset",
-      instructor: "purepearl studio",
-      rating: 4.5,
-      lessons: "17 Lessons",
-      duration: "2 hours 16 mins",
-      comments: "59 Comments",
-      level: "Beginner",
-      price: "$25",
-      period: "/lifetime",
-    },
-    {
-      id: 3,
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&q=80",
-      title: "the Power of Big Data",
-      instructor: "purepearl studio",
-      rating: 4.5,
-      lessons: "17 Lessons",
-      duration: "2 hours 16 mins",
-      comments: "59 Comments",
-      level: "Beginner",
-      price: "$25",
-      period: "/lifetime",
-    },
-    {
-      id: 4,
-      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop&q=80",
-      title: "Balancing Productivity an...",
-      instructor: "purepearl studio",
-      rating: 4.5,
-      lessons: "17 Lessons",
-      duration: "2 hours 16 mins",
-      comments: "59 Comments",
-      level: "Beginner",
-      price: "$25",
-      period: "/lifetime",
-    },
-    {
-      id: 5,
-      image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=600&h=400&fit=crop&q=80",
-      title: "Mastering Money Manage...",
-      instructor: "purepearl studio",
-      rating: 4.5,
-      lessons: "17 Lessons",
-      duration: "2 hours 16 mins",
-      comments: "59 Comments",
-      level: "Beginner",
-      price: "$25",
-      period: "/lifetime",
-    },
-    {
-      id: 6,
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop&q=80",
-      title: "From Idea to Startup Succ...",
-      instructor: "purepearl studio",
-      rating: 4.5,
-      lessons: "17 Lessons",
-      duration: "2 hours 16 mins",
-      comments: "59 Comments",
-      level: "Beginner",
-      price: "$25",
-      period: "/lifetime",
-    },
-  ];
+  const filteredCourses =
+    activeCategory === "Featured"
+      ? coursesData.slice(0, 6)
+      : coursesData.filter(
+          (c) =>
+            c.category.toLowerCase() === activeCategory.toLowerCase() ||
+            c.categories.some(
+              (cat) => cat.toLowerCase() === activeCategory.toLowerCase()
+            )
+        );
+
+  const displayCourses =
+    filteredCourses.length > 0 ? filteredCourses : coursesData.slice(0, 6);
 
   return (
     <section id="courses" className="py-20 bg-white">
@@ -138,11 +66,13 @@ export default function Courses() {
             return (
               <button
                 key={category}
+                type="button"
                 onClick={() => setActiveCategory(category)}
-                className={`rounded-full px-4 py-2 text-xs sm:text-sm font-medium transition-all ${isActive
-                  ? "bg-[#D2FF00] text-zinc-950 font-semibold shadow-sm"
-                  : "bg-zinc-100/90 text-zinc-700 hover:bg-zinc-200"
-                  }`}
+                className={`rounded-full px-4 py-2 text-xs sm:text-sm font-medium transition-all cursor-pointer ${
+                  isActive
+                    ? "bg-[#D2FF00] text-zinc-950 font-semibold shadow-sm"
+                    : "bg-zinc-100/90 text-zinc-700 hover:bg-zinc-200"
+                }`}
               >
                 {category}
               </button>
@@ -158,18 +88,22 @@ export default function Courses() {
 
         {/* Courses Cards Grid */}
         <div className="mt-14 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
-          {courses.map((course) => (
+          {displayCourses.map((course) => (
             <div
               key={course.id}
               className="group flex flex-col justify-between rounded-[28px] border border-zinc-200/90 bg-white p-4 sm:p-5 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
               {/* Course Top Image & Badges */}
               <div>
-                <Link href={`/courses/${course.id}`} className="block relative aspect-[16/10] w-full overflow-hidden rounded-[20px] bg-zinc-100 cursor-pointer">
+                <Link
+                  href={`/courses/${course.id}`}
+                  className="block relative aspect-[16/10] w-full overflow-hidden rounded-[20px] bg-zinc-100 cursor-pointer"
+                >
                   <Image
                     src={course.image}
                     alt={course.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition duration-300 group-hover:scale-105"
                   />
 
@@ -189,27 +123,33 @@ export default function Courses() {
 
                 {/* Title & Rating */}
                 <div className="mt-5 flex items-center justify-between gap-2">
-                  <Link href={`/courses/${course.id}`} className="hover:text-[#0052FE] transition-colors">
+                  <Link
+                    href={`/courses/${course.id}`}
+                    className="hover:text-[#0052FE] transition-colors flex-1"
+                  >
                     <h3 className="text-lg sm:text-[19px] font-bold text-zinc-900 line-clamp-1 hover:text-[#0052FE] transition-colors">
                       {course.title}
                     </h3>
                   </Link>
                   <div className="flex items-center gap-1 shrink-0 text-sm sm:text-base font-semibold text-zinc-500">
                     <span>{course.rating}</span>
-                    <Star className="h-4 w-4 fill-zinc-400 text-zinc-400" />
+                    <Star className="h-4 w-4 fill-[#EAB308] text-[#EAB308]" />
                   </div>
                 </div>
 
                 {/* Author Subtitle */}
                 <p className="mt-1 text-sm text-zinc-500">
                   by{" "}
-                  <span className="font-medium text-[#0052FE] hover:underline cursor-pointer">
+                  <Link
+                    href="/creators"
+                    className="font-medium text-[#0052FE] hover:underline cursor-pointer"
+                  >
                     {course.instructor}
-                  </span>
+                  </Link>
                 </p>
 
                 {/* Level & Student Avatars */}
-                <div className="mt-5 flex items-center gap-3">
+                <div className="mt-5 flex items-center justify-between">
                   <div className="flex items-center gap-2 rounded-full bg-[#F4F7FE] px-3.5 py-1.5 text-xs sm:text-sm font-semibold text-zinc-800">
                     <BarChart2 className="h-4 w-4 text-zinc-800" />
                     <span>{course.level}</span>
@@ -236,13 +176,22 @@ export default function Courses() {
               </div>
 
               {/* Price */}
-              <div className="mt-5">
-                <span className="text-2xl font-extrabold text-[#0052FE]">
-                  {course.price}
-                </span>
-                <span className="text-xs sm:text-sm text-zinc-500 font-normal ml-0.5">
-                  {course.period}
-                </span>
+              <div className="mt-5 flex items-center justify-between pt-2">
+                <div>
+                  <span className="text-2xl font-extrabold text-[#0052FE]">
+                    {course.price}
+                  </span>
+                  <span className="text-xs sm:text-sm text-zinc-500 font-normal ml-0.5">
+                    {course.period}
+                  </span>
+                </div>
+
+                <Link
+                  href={`/courses/${course.id}`}
+                  className="text-xs font-bold text-[#0052FE] hover:underline"
+                >
+                  View Details &rarr;
+                </Link>
               </div>
             </div>
           ))}
