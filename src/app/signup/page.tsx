@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Star, BarChart2 } from "lucide-react";
+import { Star, BarChart2, ArrowLeft } from "lucide-react";
 
 export default function SignupPage() {
   const avatars = [
@@ -21,19 +21,29 @@ export default function SignupPage() {
         {/* Left Column: Brand, Intro, and 3D Showcase Collage */}
         <div className="lg:col-span-6 flex flex-col justify-between h-full">
           <div>
-            {/* Logo */}
-            <Link href="/" className="inline-flex items-center gap-2.5 transition hover:opacity-90">
-              <div className="relative h-9 w-9 flex items-center justify-center">
-                <Image
-                  src="/assets/Logo.png"
-                  alt="ByteSpace Logo"
-                  width={36}
-                  height={36}
-                  className="h-9 w-auto object-contain"
-                  priority
-                />
-              </div>
-            </Link>
+            {/* Top Bar: Logo & Back to Home */}
+            <div className="flex items-center justify-between">
+              <Link href="/" className="inline-flex items-center gap-2.5 transition hover:opacity-90">
+                <div className="relative h-9 w-9 flex items-center justify-center">
+                  <Image
+                    src="/assets/Logo.png"
+                    alt="ByteSpace Logo"
+                    width={36}
+                    height={36}
+                    className="h-9 w-auto object-contain"
+                    priority
+                  />
+                </div>
+              </Link>
+
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm font-medium text-white backdrop-blur-md transition-all hover:bg-white/20 border border-white/15 shadow-sm active:scale-95"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                <span>Back to Home</span>
+              </Link>
+            </div>
 
             {/* Intro Text */}
             <h1 className="mt-6 text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight text-white">
