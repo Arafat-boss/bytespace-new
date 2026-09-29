@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SearchBanner from "@/components/search/SearchBanner";
-import CreatorCourses from "@/components/creator/CreatorCourses";
+import SearchResults from "@/components/search/SearchResults";
 
 export default function SearchPage() {
   return (
@@ -15,8 +15,8 @@ export default function SearchPage() {
         </Suspense>
       </div>
 
-      {/* 2. Search Results / Courses Section */}
-      <CreatorCourses />
+      {/* 2. Search Results / Courses Section with Dual Filters and Pagination */}
+      <SearchResults />
 
       {/* 3. Footer */}
       <Footer />
