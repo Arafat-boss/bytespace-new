@@ -12,8 +12,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "ByteSpace - Smart Tech Learning & Growth",
-  description: "Empowering next generation developers with practical tech education and real-world software engineering.",
+  title: "ByteSpace - Discover Your Passion, Build Your Skills",
+  description: "Get access to hundreds of courses available on ByteSpace. Master UI/UX design, development, marketing, data science, and more.",
+  icons: {
+    icon: "/assets/Logo.png",
+    shortcut: "/assets/Logo.png",
+    apple: "/assets/Logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {
