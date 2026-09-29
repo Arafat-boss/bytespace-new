@@ -15,23 +15,18 @@ import {
   RotateCcw,
   Check,
 } from "lucide-react";
-import { coursesData, CourseData } from "@/data/courses";
-
-interface SearchResultsProps {
-  searchQuery?: string;
-  onClearSearch?: () => void;
-}
+import { coursesData } from "@/data/courses";
 
 export default function SearchResults({
   searchQuery = "",
   onClearSearch,
-}: SearchResultsProps) {
+}) {
   const searchParams = useSearchParams();
   const urlQuery = searchParams.get("q") || "";
   const effectiveQuery = searchQuery || urlQuery;
 
   const [activeCategory, setActiveCategory] = useState("Featured");
-  const [activeLevel, setActiveLevel] = useState<string | null>(null);
+  const [activeLevel, setActiveLevel] = useState(null);
   const [sortBy, setSortBy] = useState("Most relevant");
   const [currentPage, setCurrentPage] = useState(1);
   const [isLevelMenuOpen, setIsLevelMenuOpen] = useState(false);
@@ -142,7 +137,6 @@ export default function SearchResults({
     return result;
   }, [effectiveQuery, activeCategory, activeLevel, sortBy]);
 
-  // If no filters active and showing all, ensure grid has rich items
   const displayCourses = filteredCourses;
 
   const handleResetFilters = () => {
@@ -313,7 +307,7 @@ export default function SearchResults({
           </div>
         </div>
 
-        {/* Active Filter Chips Bar (if search or level active) */}
+        {/* Active Filter Chips Bar */}
         {(effectiveQuery || activeLevel || activeCategory !== "Featured") && (
           <div className="mt-4 flex flex-wrap items-center gap-2 text-xs">
             <span className="text-zinc-500 font-medium">Active filters:</span>

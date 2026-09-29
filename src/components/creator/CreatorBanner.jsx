@@ -73,7 +73,7 @@ export default function CreatorBanner() {
           <button
             type="button"
             onClick={handleFollowToggle}
-            className={`rounded-full px-8 py-2.5 sm:px-9 sm:py-3 text-xs sm:text-sm font-bold shadow-md transition-all duration-200 hover:scale-105 active:scale-95 text-center ${
+            className={`rounded-full px-8 py-2.5 sm:px-9 sm:py-3 text-xs sm:text-sm font-bold shadow-md transition-all duration-200 hover:scale-105 active:scale-95 text-center cursor-pointer ${
               isFollowing
                 ? "bg-white text-zinc-950 hover:bg-zinc-100"
                 : "bg-[#D2FF00] text-zinc-950 hover:bg-[#c2ed00]"

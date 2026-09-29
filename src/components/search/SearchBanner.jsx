@@ -3,19 +3,12 @@
 import { useState, useEffect } from "react";
 import { Search as SearchIcon, ChevronDown } from "lucide-react";
 
-interface SearchBannerProps {
-  query?: string;
-  onSearchChange?: (query: string) => void;
-  selectedType?: string;
-  onTypeChange?: (type: string) => void;
-}
-
 export default function SearchBanner({
   query = "",
   onSearchChange,
   selectedType = "Courses",
   onTypeChange,
-}: SearchBannerProps) {
+}) {
   const [localQuery, setLocalQuery] = useState(query);
   const [currentType, setCurrentType] = useState(selectedType);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -26,19 +19,19 @@ export default function SearchBanner({
 
   const types = ["Courses", "Creators", "Categories", "Articles"];
 
-  const handleTypeSelect = (type: string) => {
+  const handleTypeSelect = (type) => {
     setCurrentType(type);
     setIsDropdownOpen(false);
     onTypeChange?.(type);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e) => {
     const val = e.target.value;
     setLocalQuery(val);
     onSearchChange?.(val);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     onSearchChange?.(localQuery);
   };

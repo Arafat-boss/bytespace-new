@@ -62,7 +62,7 @@ export default function Navbar() {
           <button
             type="button"
             aria-label="Shopping Cart"
-            className="flex items-center justify-center text-white/95 transition-opacity hover:opacity-80"
+            className="flex items-center justify-center text-white/95 transition-opacity hover:opacity-80 cursor-pointer"
           >
             <ShoppingBag className="h-5 w-5 stroke-[1.8]" />
           </button>

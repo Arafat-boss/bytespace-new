@@ -4,11 +4,11 @@ import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SlidersHorizontal, BarChart2, Shapes, ArrowUpDown, Star, Check } from "lucide-react";
-import { coursesData, CourseData } from "@/data/courses";
+import { coursesData } from "@/data/courses";
 
 export default function CreatorCourses() {
-  const [activeLevel, setActiveLevel] = useState<string | null>(null);
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeLevel, setActiveLevel] = useState(null);
+  const [activeCategory, setActiveCategory] = useState(null);
   const [sortBy, setSortBy] = useState("Most relevant");
   const [isLevelMenuOpen, setIsLevelMenuOpen] = useState(false);
   const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);

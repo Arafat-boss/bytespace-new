@@ -1,13 +1,6 @@
 import Image from "next/image";
 
-interface Testimonial {
-  name: string;
-  role: string;
-  quote: string;
-  avatar: string;
-}
-
-const testimonials: Testimonial[] = [
+const testimonials = [
   {
     name: "Sarah M.",
     role: "Enthusiastic Learner",

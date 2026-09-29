@@ -68,7 +68,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
-                className="w-full sm:w-auto rounded-full bg-[#D2FF00] px-7 py-3 text-xs sm:text-sm font-bold text-zinc-950 transition-all hover:bg-[#c2ed00] hover:scale-105 active:scale-95 shadow-sm text-center"
+                className="w-full sm:w-auto rounded-full bg-[#D2FF00] px-7 py-3 text-xs sm:text-sm font-bold text-zinc-950 transition-all hover:bg-[#c2ed00] hover:scale-105 active:scale-95 shadow-sm text-center cursor-pointer"
               >
                 Search
               </button>

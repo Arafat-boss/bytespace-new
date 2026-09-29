@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Star, BarChart2, ArrowLeft } from "lucide-react";
 
-export default function LoginPage() {
+export default function SignupPage() {
   const avatars = [
     "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces&q=80",
     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces&q=80",
@@ -37,10 +37,10 @@ export default function LoginPage() {
 
             {/* Intro Text */}
             <h1 className="mt-6 text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight text-white">
-              Sign in with ease
+              Sign up and come in
             </h1>
             <p className="mt-3 max-w-md text-xs sm:text-sm leading-relaxed text-white/80">
-              Experience a seamless and efficient sign-in process that grants you instant access to a world of knowledge.
+              The registration process is straightforward, uncomplicated, and efficient, allowing users to sign up quickly, easily, and at no cost.
             </p>
 
             {/* Back to Home Button (under description) */}
@@ -245,21 +245,40 @@ export default function LoginPage() {
           </div>
         </div>
 
-        {/* Right Column: Login Form Card */}
+        {/* Right Column: Signup Form Card */}
         <div className="lg:col-span-6 flex justify-center lg:justify-end">
           <div className="w-full max-w-[480px] lg:max-w-[500px] rounded-[36px] sm:rounded-[44px] bg-white p-8 sm:p-12 lg:p-14 shadow-2xl relative z-20">
             {/* Header */}
             <div>
               <p className="text-xs sm:text-sm font-semibold text-[#0052FE]">
-                Sign In
+                Create an Account
               </p>
               <h2 className="mt-1 text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-950 leading-[1.15]">
-                Welcome Back
+                Welcome to <br />
+                ByteSpace
               </h2>
             </div>
 
             {/* Form */}
             <form onSubmit={(e) => e.preventDefault()} className="mt-8 space-y-4 sm:space-y-5">
+              {/* Full Name */}
+              <div>
+                <label
+                  htmlFor="fullName"
+                  className="block text-xs font-semibold text-zinc-700 mb-1.5"
+                >
+                  Full Name
+                </label>
+                <input
+                  id="fullName"
+                  name="fullName"
+                  type="text"
+                  required
+                  placeholder="Jamie Davis"
+                  className="w-full rounded-[14px] border border-zinc-200/90 bg-white px-4 py-3.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-500 transition"
+                />
+              </div>
+
               {/* Email */}
               <div>
                 <label
@@ -300,56 +319,21 @@ export default function LoginPage() {
               <div className="flex justify-end pt-2">
                 <button
                   type="submit"
-                  className="rounded-full bg-[#D2FF00] px-8 py-3 sm:px-9 sm:py-3.5 text-sm font-bold text-zinc-950 shadow-sm transition-all duration-200 hover:bg-[#c2ed00] hover:scale-105 active:scale-95 text-center"
+                  className="rounded-full bg-[#D2FF00] px-8 py-3 sm:px-9 sm:py-3.5 text-sm font-bold text-zinc-950 shadow-sm transition-all duration-200 hover:bg-[#c2ed00] hover:scale-105 active:scale-95 text-center cursor-pointer"
                 >
-                  Sign In
+                  Continue
                 </button>
               </div>
             </form>
 
-            {/* Social Login Divider */}
-            <div className="relative my-7 sm:my-8">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-zinc-200/80" />
-              </div>
-              <div className="relative flex justify-center text-xs">
-                <span className="bg-white px-3 text-zinc-400 font-normal">or</span>
-              </div>
-            </div>
-
-            {/* Social Login Icons */}
-            <div className="flex items-center justify-center gap-4">
-              {/* Facebook Button */}
-              <button
-                type="button"
-                aria-label="Sign in with Facebook"
-                className="flex h-13 w-13 sm:h-14 sm:w-14 items-center justify-center rounded-2xl border border-zinc-200/90 text-zinc-950 transition-all hover:bg-zinc-50 hover:border-zinc-300 hover:scale-105 active:scale-95 shadow-xs"
-              >
-                <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                </svg>
-              </button>
-
-              {/* Google Button */}
-              <button
-                type="button"
-                aria-label="Sign in with Google"
-                className="flex h-13 w-13 sm:h-14 sm:w-14 items-center justify-center rounded-2xl border border-zinc-200/90 text-zinc-950 transition-all hover:bg-zinc-50 hover:border-zinc-300 hover:scale-105 active:scale-95 shadow-xs"
-              >
-                <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                  <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.344-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z" />
-                </svg>
-              </button>
-            </div>
-
             {/* Bottom Link */}
-            <div className="mt-8 sm:mt-10 text-center text-xs text-zinc-500">
-              New user?{" "}
+            <div className="mt-10 sm:mt-12 text-center text-xs text-zinc-500">
+              Already have an account?{" "}
               <Link
-                href="/signup"
+                href="/login"
                 className="font-semibold text-[#0052FE] hover:underline transition-colors"
               >
-                Create an account
+                Login
               </Link>
             </div>
           </div>

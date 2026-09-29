@@ -31,7 +31,7 @@ export default function NotFound() {
           <div className="mt-7 sm:mt-9 flex justify-center">
             <Link
               href="/"
-              className="rounded-full bg-[#D2FF00] px-8 py-3.5 sm:px-9 sm:py-4 text-xs sm:text-sm font-bold text-zinc-950 shadow-xl transition-all duration-200 hover:bg-[#c2ed00] hover:scale-105 active:scale-95 text-center"
+              className="rounded-full bg-[#D2FF00] px-8 py-3.5 sm:px-9 sm:py-4 text-xs sm:text-sm font-bold text-zinc-950 shadow-xl transition-all duration-200 hover:bg-[#c2ed00] hover:scale-105 active:scale-95 text-center cursor-pointer"
             >
               Back to Home
             </Link>

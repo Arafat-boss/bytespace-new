@@ -1,39 +1,4 @@
-export interface CourseLesson {
-  id: string;
-  title: string;
-  duration: string;
-}
-
-export interface CourseData {
-  id: number;
-  slug: string;
-  title: string;
-  subtitle: string;
-  category: string;
-  categories: string[];
-  instructor: string;
-  instructorRole: string;
-  instructorAvatar: string;
-  rating: number;
-  reviewsCount: number;
-  studentsCount: string;
-  level: string; // "Beginner" | "Intermediate" | "Advanced"
-  price: string;
-  priceNumeric: number;
-  period: string;
-  image: string;
-  videoPreviewImage: string;
-  lessons: string;
-  duration: string;
-  comments: string;
-  totalLessonsInfo: string;
-  description: string[];
-  keyPoints: string[];
-  lessonsList: CourseLesson[];
-  sneakPeakImages: string[];
-}
-
-export const coursesData: CourseData[] = [
+export const coursesData = [
   {
     id: 1,
     slug: "learn-figma-from-basic",
@@ -898,7 +863,7 @@ export const coursesData: CourseData[] = [
   }
 ];
 
-export function getCourseById(id: number | string): CourseData {
+export function getCourseById(id) {
   if (!id) return coursesData[0];
   
   const numericId = typeof id === "string" ? parseInt(id, 10) : id;

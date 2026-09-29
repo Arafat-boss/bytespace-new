@@ -15,9 +15,9 @@ import {
   MessageCircle,
   CheckCircle2,
 } from "lucide-react";
-import { CourseData, getCourseById } from "@/data/courses";
+import { getCourseById } from "@/data/courses";
 
-export default function CourseDetailsView({ course }: { course?: CourseData }) {
+export default function CourseDetailsView({ course }) {
   const currentCourse = course || getCourseById(2);
 
   const [activeTab, setActiveTab] = useState("About");
@@ -123,7 +123,7 @@ export default function CourseDetailsView({ course }: { course?: CourseData }) {
                       key={tab}
                       type="button"
                       onClick={() => setActiveTab(tab)}
-                      className={`rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all ${
+                      className={`rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                         isActive
                           ? "bg-[#D2FF00] text-zinc-950 shadow-xs font-bold"
                           : "bg-zinc-100/90 text-zinc-700 hover:bg-zinc-200"

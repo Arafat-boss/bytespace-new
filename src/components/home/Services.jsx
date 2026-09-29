@@ -5,7 +5,7 @@ export default function Services() {
     {
       icon: <Layout className="h-6 w-6 text-blue-500" />,
       title: "Frontend Engineering",
-      description: "Master React, Next.js, Tailwind CSS, TypeScript, and state management for scalable web interfaces.",
+      description: "Master React, Next.js, Tailwind CSS, JavaScript, and state management for scalable web interfaces.",
     },
     {
       icon: <Database className="h-6 w-6 text-emerald-500" />,

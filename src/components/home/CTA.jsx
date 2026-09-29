@@ -100,7 +100,7 @@ export default function CTA() {
         <div className="mt-8 sm:mt-10 flex justify-center">
           <Link
             href="/signup"
-            className="rounded-full bg-[#D2FF00] px-8 py-3.5 sm:px-10 sm:py-4 text-sm sm:text-base font-bold text-zinc-950 shadow-xl transition-all duration-200 hover:bg-[#c2ed00] hover:scale-105 active:scale-95"
+            className="rounded-full bg-[#D2FF00] px-8 py-3.5 sm:px-10 sm:py-4 text-sm sm:text-base font-bold text-zinc-950 shadow-xl transition-all duration-200 hover:bg-[#c2ed00] hover:scale-105 active:scale-95 cursor-pointer"
           >
             Join as Creator
           </Link>
