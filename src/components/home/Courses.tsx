@@ -138,11 +138,10 @@ export default function Courses() {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`rounded-full px-4 py-2 text-xs sm:text-sm font-medium transition-all ${
-                  isActive
-                    ? "bg-[#D2FF00] text-zinc-950 font-semibold shadow-sm"
-                    : "bg-zinc-100/80 text-zinc-700 hover:bg-zinc-200 dark:bg-zinc-800/80 dark:text-zinc-300 dark:hover:bg-zinc-700"
-                }`}
+                className={`rounded-full px-4 py-2 text-xs sm:text-sm font-medium transition-all ${isActive
+                  ? "bg-[#D2FF00] text-zinc-950 font-semibold shadow-sm"
+                  : "bg-zinc-100/80 text-zinc-700 hover:bg-zinc-200 dark:bg-zinc-800/80 dark:text-zinc-300 dark:hover:bg-zinc-700"
+                  }`}
               >
                 {category}
               </button>

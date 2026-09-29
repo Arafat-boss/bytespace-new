@@ -10,7 +10,7 @@ export default function CompanyLogos() {
   ];
 
   return (
-    <section className="border-b border-zinc-100 bg-[#F8F9FB] py-10 sm:py-12 dark:border-zinc-800 dark:bg-zinc-900/60">
+    <section className="border-y border-zinc-200/70 bg-[#F1F3F7] py-10 sm:py-12 dark:border-zinc-800 dark:bg-zinc-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
         <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 md:justify-between">
           {logos.map((logo, index) => (
