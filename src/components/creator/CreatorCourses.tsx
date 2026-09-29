@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { SlidersHorizontal, BarChart2, Shapes, ArrowUpDown, Star } from "lucide-react";
 
 interface Course {
@@ -179,7 +180,7 @@ export default function CreatorCourses() {
             >
               {/* Course Image Preview & 3 Badges */}
               <div>
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[20px] bg-zinc-100">
+                <Link href="/courses/1" className="block relative aspect-[16/10] w-full overflow-hidden rounded-[20px] bg-zinc-100 cursor-pointer">
                   <Image
                     src={course.image}
                     alt={course.title}
@@ -199,13 +200,15 @@ export default function CreatorCourses() {
                       {course.comments}
                     </span>
                   </div>
-                </div>
+                </Link>
 
                 {/* Title & Rating */}
                 <div className="mt-4 sm:mt-5 flex items-center justify-between gap-2">
-                  <h3 className="text-base sm:text-[17px] font-bold text-zinc-900 line-clamp-1">
-                    {course.title}
-                  </h3>
+                  <Link href="/courses/1" className="hover:text-[#0052FE] transition-colors">
+                    <h3 className="text-base sm:text-[17px] font-bold text-zinc-900 line-clamp-1 hover:text-[#0052FE] transition-colors">
+                      {course.title}
+                    </h3>
+                  </Link>
                   <div className="flex items-center gap-1 shrink-0 text-xs sm:text-sm font-semibold text-zinc-500">
                     <span>{course.rating}</span>
                     <Star className="h-3.5 w-3.5 fill-zinc-400 text-zinc-400" />

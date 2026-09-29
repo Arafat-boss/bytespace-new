@@ -165,7 +165,7 @@ export default function Courses() {
             >
               {/* Course Top Image & Badges */}
               <div>
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[20px] bg-zinc-100">
+                <Link href={`/courses/${course.id}`} className="block relative aspect-[16/10] w-full overflow-hidden rounded-[20px] bg-zinc-100 cursor-pointer">
                   <Image
                     src={course.image}
                     alt={course.title}
@@ -185,11 +185,11 @@ export default function Courses() {
                       {course.comments}
                     </span>
                   </div>
-                </div>
+                </Link>
 
                 {/* Title & Rating */}
                 <div className="mt-5 flex items-center justify-between gap-2">
-                  <Link href="/courses/1" className="hover:text-[#0052FE] transition-colors">
+                  <Link href={`/courses/${course.id}`} className="hover:text-[#0052FE] transition-colors">
                     <h3 className="text-lg sm:text-[19px] font-bold text-zinc-900 line-clamp-1 hover:text-[#0052FE] transition-colors">
                       {course.title}
                     </h3>
