@@ -32,13 +32,13 @@ export default function Navbar() {
             Home
           </Link>
           <Link
-            href="#courses"
+            href="/#courses"
             className="transition-colors hover:text-white"
           >
             Courses
           </Link>
           <Link
-            href="#creators"
+            href="/creators"
             className="transition-colors hover:text-white"
           >
             Creators
