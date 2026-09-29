@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
+import CompanyLogos from "@/components/home/CompanyLogos";
 import Features from "@/components/home/Features";
 import About from "@/components/home/About";
 import Services from "@/components/home/Services";
@@ -15,6 +16,9 @@ export default function Home() {
         <Navbar />
         <Hero />
       </div>
+
+      {/* Company Logos Bar */}
+      <CompanyLogos />
 
       {/* Main Page Sections */}
       <main className="flex-1">
