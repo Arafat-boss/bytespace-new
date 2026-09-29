@@ -5,42 +5,33 @@ import CompanyLogos from "@/components/home/CompanyLogos";
 import Courses from "@/components/home/Courses";
 import LearningPaths from "@/components/home/LearningPaths";
 import GrowthAndCreation from "@/components/home/GrowthAndCreation";
-import Features from "@/components/home/Features";
-import About from "@/components/home/About";
-import Services from "@/components/home/Services";
-import Testimonials from "@/components/home/Testimonials";
 import CTA from "@/components/home/CTA";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-white text-zinc-900 antialiased">
-      {/* Top Banner Section with Royal Blue Grid Pattern */}
+      {/* 1. Top Banner Section with Royal Blue Grid Pattern */}
       <div className="hero-grid-pattern relative w-full overflow-hidden">
         <Navbar />
         <Hero />
       </div>
 
-      {/* Company Logos Bar */}
+      {/* 2. Company Logos Bar */}
       <CompanyLogos />
 
-      {/* Courses Section */}
+      {/* 3. Courses Section */}
       <Courses />
 
-      {/* Learning Paths Section */}
+      {/* 4. Learning Paths Section */}
       <LearningPaths />
 
-      {/* Growth & Course Creation Dual Showcase Section (Seamless Continuous Background) */}
+      {/* 5. Growth & Course Creation Dual Showcase Section */}
       <GrowthAndCreation />
 
-      {/* Other Sections */}
-      <main className="flex-1">
-        <Features />
-        <About />
-        <Services />
-        <Testimonials />
-        <CTA />
-      </main>
+      {/* 6. Creator CTA Banner with Royal Blue Grid */}
+      <CTA />
 
+      {/* 7. Footer */}
       <Footer />
     </div>
   );
