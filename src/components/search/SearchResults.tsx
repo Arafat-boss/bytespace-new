@@ -229,7 +229,7 @@ export default function SearchResults() {
             >
               {/* Course Top Image & Badges */}
               <div>
-                <Link href="/courses/1" className="block relative aspect-[16/10] w-full overflow-hidden rounded-[20px] bg-zinc-100 cursor-pointer">
+                <Link href={`/courses/${course.id}`} className="block relative aspect-[16/10] w-full overflow-hidden rounded-[20px] bg-zinc-100 cursor-pointer">
                   <Image
                     src={course.image}
                     alt={course.title}
@@ -253,7 +253,7 @@ export default function SearchResults() {
 
                 {/* Title & Rating */}
                 <div className="mt-4 sm:mt-5 flex items-center justify-between gap-2">
-                  <Link href="/courses/1" className="hover:text-[#0052FE] transition-colors">
+                  <Link href={`/courses/${course.id}`} className="hover:text-[#0052FE] transition-colors">
                     <h3 className="text-base sm:text-[17px] font-bold text-zinc-900 line-clamp-1 hover:text-[#0052FE] transition-colors">
                       {course.title}
                     </h3>

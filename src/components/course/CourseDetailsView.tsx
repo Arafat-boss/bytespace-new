@@ -15,28 +15,13 @@ import {
   MessageCircle,
   CheckCircle2,
 } from "lucide-react";
+import { CourseData, getCourseById } from "@/data/courses";
 
-export default function CourseDetailsView() {
+export default function CourseDetailsView({ course }: { course?: CourseData }) {
+  const currentCourse = course || getCourseById(2);
+
   const [activeTab, setActiveTab] = useState("About");
   const [isEnrolled, setIsEnrolled] = useState(false);
-
-  const sneakPeakImages = [
-    "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=300&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=400&h=300&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80",
-  ];
-
-  const keyPoints = [
-    "Foundational Concepts",
-    "Design Principles Mastery",
-    "Advanced Techniques in Digital Creation",
-    "Project Showcase and Critique",
-    "Optimizing for Various Platforms",
-    "Digital Asset Management Best Practices",
-    "Monetization Strategies",
-    "Capstone Project: Building Your Portfolio",
-  ];
 
   return (
     <div className="w-full">
@@ -50,15 +35,15 @@ export default function CourseDetailsView() {
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
                 <h1 className="text-2xl sm:text-3xl lg:text-[36px] font-bold tracking-tight text-white leading-[1.2]">
-                  Build Digital Asset: A Comprehensive Guide
+                  {currentCourse.title}
                 </h1>
                 <p className="mt-2 text-xs sm:text-sm font-medium text-white/90">
-                  Unlock the Power of Digital Creation with Expert Guidance
+                  {currentCourse.subtitle}
                 </p>
                 <p className="mt-1 text-xs text-white/80">
                   by{" "}
                   <Link href="/creators" className="font-semibold text-[#D2FF00] hover:underline">
-                    purepearl studio
+                    {currentCourse.instructor}
                   </Link>
                 </p>
               </div>
@@ -77,28 +62,28 @@ export default function CourseDetailsView() {
             <div className="mt-5 flex flex-wrap items-center gap-2.5 sm:gap-3">
               {/* Level */}
               <div className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-zinc-800 shadow-sm">
-                <BarChart2 className="h-3.5 w-3.5 text-blue-600" />
-                <span>Intermediate</span>
+                <BarChart2 className="h-3.5 w-3.5 text-[#0052FE]" />
+                <span>{currentCourse.level}</span>
               </div>
 
               {/* Rating */}
               <div className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-zinc-800 shadow-sm">
                 <Star className="h-3.5 w-3.5 fill-[#EAB308] text-[#EAB308]" />
-                <span>4.8 (172 reviews)</span>
+                <span>{currentCourse.rating} ({currentCourse.reviewsCount} reviews)</span>
               </div>
 
               {/* Students */}
               <div className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-zinc-800 shadow-sm">
-                <Users className="h-3.5 w-3.5 text-blue-600" />
-                <span>199 Students</span>
+                <Users className="h-3.5 w-3.5 text-[#0052FE]" />
+                <span>{currentCourse.studentsCount}</span>
               </div>
             </div>
 
             {/* Video Player Frame */}
             <div className="relative mt-8 sm:mt-10 aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden rounded-[28px] sm:rounded-[36px] bg-zinc-900 shadow-2xl border-4 border-white/10 group">
               <Image
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop"
-                alt="Course Video Preview"
+                src={currentCourse.videoPreviewImage || currentCourse.image}
+                alt={currentCourse.title}
                 fill
                 className="object-cover transition duration-300 group-hover:scale-105"
                 priority
@@ -109,7 +94,7 @@ export default function CourseDetailsView() {
                 <button
                   type="button"
                   aria-label="Play course video preview"
-                  className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md border border-white/40 shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-black/60 active:scale-95"
+                  className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md border border-white/40 shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-black/60 active:scale-95 cursor-pointer"
                 >
                   <Play className="h-7 w-7 sm:h-8 sm:w-8 fill-current ml-1" />
                 </button>
@@ -157,15 +142,9 @@ export default function CourseDetailsView() {
                 </h2>
 
                 <div className="mt-4 space-y-4 text-xs sm:text-[13.5px] leading-relaxed text-zinc-600 font-normal">
-                  <p>
-                    Embark on an enlightening exploration into the world of digital creation with our comprehensive course, &ldquo;Build Digital Assets: A Comprehensive Guide.&rdquo; This transformative learning experience invites you to delve deep into the intricacies of crafting impactful digital content. From laying the groundwork with foundational concepts to mastering advanced techniques, this guide is meticulously curated to empower you with the skills essential for navigating the dynamic landscape of digital asset creation.
-                  </p>
-                  <p>
-                    In the initial modules, you&apos;ll establish a solid foundation by immersing yourself in the foundational concepts that form the backbone of digital asset creation. Understand the fundamental elements that constitute compelling digital content and gain proficiency in leveraging these elements to communicate effectively in the digital realm.
-                  </p>
-                  <p>
-                    As you progress through the course, you&apos;ll ascend to higher levels of expertise, delving into the nuances of design principles that drive impactful creations. Uncover the secrets behind effective visual communication, exploring color theory, typography, and layout strategies that elevate your digital assets to new heights. Engage in hands-on exercises that reinforce your understanding, allowing you to apply these principles in practical scenarios.
-                  </p>
+                  {currentCourse.description.map((paragraph, idx) => (
+                    <p key={idx}>{paragraph}</p>
+                  ))}
                 </div>
               </div>
 
@@ -176,7 +155,7 @@ export default function CourseDetailsView() {
                 </h3>
 
                 <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-                  {sneakPeakImages.map((src, i) => (
+                  {currentCourse.sneakPeakImages.map((src, i) => (
                     <div
                       key={i}
                       className="relative aspect-[4/3] w-full overflow-hidden rounded-[18px] sm:rounded-[20px] bg-zinc-100 border border-zinc-200/80 shadow-xs group"
@@ -199,7 +178,7 @@ export default function CourseDetailsView() {
                 </h3>
 
                 <div className="mt-4 space-y-3.5">
-                  {keyPoints.map((point, index) => (
+                  {currentCourse.keyPoints.map((point, index) => (
                     <div key={index} className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-[#0052FE] shrink-0 fill-[#0052FE]/10" />
                       <span className="text-xs sm:text-sm font-medium text-zinc-800">
@@ -216,39 +195,25 @@ export default function CourseDetailsView() {
               <div className="sticky top-6 rounded-[32px] sm:rounded-[36px] border border-zinc-200/90 bg-white p-6 sm:p-7 shadow-2xl">
                 {/* Lessons Header */}
                 <h3 className="text-base sm:text-lg font-bold tracking-tight text-zinc-950">
-                  112 Lessons (24 hours)
+                  {currentCourse.totalLessonsInfo}
                 </h3>
 
                 {/* Lesson Preview List */}
                 <div className="mt-4 space-y-3">
-                  <div className="flex items-center justify-between text-xs sm:text-[13px] border-b border-zinc-100 pb-2.5">
-                    <div className="flex items-center gap-2 font-medium text-zinc-800">
-                      <span className="text-zinc-400 font-semibold">01</span>
-                      <span className="line-clamp-1">Introduction to Digital Assets</span>
+                  {currentCourse.lessonsList.map((lesson) => (
+                    <div key={lesson.id} className="flex items-center justify-between text-xs sm:text-[13px] border-b border-zinc-100 pb-2.5">
+                      <div className="flex items-center gap-2 font-medium text-zinc-800">
+                        <span className="text-zinc-400 font-semibold">{lesson.id}</span>
+                        <span className="line-clamp-1">{lesson.title}</span>
+                      </div>
+                      <span className="font-semibold text-[#0052FE] shrink-0">{lesson.duration}</span>
                     </div>
-                    <span className="font-semibold text-[#0052FE] shrink-0">12 mins</span>
-                  </div>
-
-                  <div className="flex items-center justify-between text-xs sm:text-[13px] border-b border-zinc-100 pb-2.5">
-                    <div className="flex items-center gap-2 font-medium text-zinc-800">
-                      <span className="text-zinc-400 font-semibold">02</span>
-                      <span className="line-clamp-1">Design Principles for Impacts</span>
-                    </div>
-                    <span className="font-semibold text-[#0052FE] shrink-0">21 mins</span>
-                  </div>
-
-                  <div className="flex items-center justify-between text-xs sm:text-[13px] border-b border-zinc-100 pb-2.5">
-                    <div className="flex items-center gap-2 font-medium text-zinc-800">
-                      <span className="text-zinc-400 font-semibold">03</span>
-                      <span className="line-clamp-1">Advanced Techniques in Digital Creation</span>
-                    </div>
-                    <span className="font-semibold text-[#0052FE] shrink-0">16 mins</span>
-                  </div>
+                  ))}
                 </div>
 
                 <button
                   type="button"
-                  className="mt-3 text-xs font-semibold text-zinc-500 hover:text-zinc-900 transition"
+                  className="mt-3 text-xs font-semibold text-zinc-500 hover:text-zinc-900 transition cursor-pointer"
                 >
                   99 more videos
                 </button>
@@ -261,10 +226,10 @@ export default function CourseDetailsView() {
                 {/* Price */}
                 <div className="mt-3">
                   <span className="text-2xl sm:text-3xl font-black text-[#0052FE]">
-                    $25
+                    {currentCourse.price}
                   </span>
                   <span className="text-xs text-zinc-400 font-normal ml-0.5">
-                    /lifetime
+                    {currentCourse.period}
                   </span>
                 </div>
 
@@ -272,7 +237,7 @@ export default function CourseDetailsView() {
                 <button
                   type="button"
                   onClick={() => setIsEnrolled((prev) => !prev)}
-                  className="mt-4 w-full rounded-full bg-[#D2FF00] py-3.5 text-center text-sm font-bold text-zinc-950 shadow-md transition-all hover:bg-[#c2ed00] hover:scale-[1.02] active:scale-98"
+                  className="mt-4 w-full rounded-full bg-[#D2FF00] py-3.5 text-center text-sm font-bold text-zinc-950 shadow-md transition-all hover:bg-[#c2ed00] hover:scale-[1.02] active:scale-98 cursor-pointer"
                 >
                   {isEnrolled ? "Enrolled Successfully" : "Enroll Now"}
                 </button>
@@ -307,18 +272,18 @@ export default function CourseDetailsView() {
                   <div className="flex items-center gap-3">
                     <div className="relative h-10 w-10 overflow-hidden rounded-full bg-zinc-200">
                       <Image
-                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
-                        alt="PurePearl Studio"
+                        src={currentCourse.instructorAvatar}
+                        alt={currentCourse.instructor}
                         fill
                         className="object-cover"
                       />
                     </div>
                     <div>
                       <h5 className="text-xs sm:text-sm font-bold text-zinc-900">
-                        PurePearl Studio
+                        {currentCourse.instructor}
                       </h5>
                       <p className="text-[11px] text-zinc-500">
-                        Professional Creator
+                        {currentCourse.instructorRole}
                       </p>
                     </div>
                   </div>
