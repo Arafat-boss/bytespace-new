@@ -1,70 +1,103 @@
-import { Star } from "lucide-react";
+import Image from "next/image";
+
+interface Testimonial {
+  name: string;
+  role: string;
+  quote: string;
+  avatar: string;
+}
+
+const testimonials: Testimonial[] = [
+  {
+    name: "Sarah M.",
+    role: "Enthusiastic Learner",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop",
+    quote:
+      '"ByteSpace has transformed my approach to learning. The diverse range of courses and the quality of content provided by creators have exceeded my expectations. The platform truly fosters a sense of community and lifelong learning."',
+  },
+  {
+    name: "James L.",
+    role: "Lifelong Learner",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop",
+    quote:
+      '"I\'ve tried several online learning platforms, and ByteSpace stands out for its vibrant community and the variety of courses available. The easy navigation and engaging content make it a go-to platform for continuous skill development."',
+  },
+  {
+    name: "Alex B.",
+    role: "Inspired Creator",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop",
+    quote:
+      '"As a creator, ByteSpace has been a game-changer for me. The Course Editor is user-friendly, and the support from the community is incredible. It\'s fulfilling to see my courses making a positive impact on learners globally."',
+  },
+];
 
 export default function Testimonials() {
-  const testimonials = [
-    {
-      name: "Alex Tan",
-      role: "Software Engineer at TechCorp",
-      review:
-        "ByteSpace completely changed how I approach full-stack software development. The real-world projects and code reviews gave me the confidence to pass high-bar interviews.",
-      rating: 5,
-    },
-    {
-      name: "Sara Ahmed",
-      role: "Frontend Developer at StartupX",
-      review:
-        "The curriculum is always up to date with modern stacks. Learning Next.js and TypeScript through practical assignments made all the difference in my job hunt.",
-      rating: 5,
-    },
-    {
-      name: "David Kim",
-      role: "Cloud Engineer",
-      review:
-        "The mentorship and supportive community are unmatched. You're not just watching videos; you're actively architecting systems and getting real developer feedback.",
-      rating: 5,
-    },
-  ];
-
   return (
-    <section id="testimonials" className="py-20 bg-white dark:bg-zinc-950">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
-            Testimonials
-          </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
-            Loved by developers worldwide
-          </p>
-          <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
-            Hear how ByteSpace helped learners level up their skills and land dream engineering roles.
-          </p>
+    <section id="testimonials" className="relative overflow-hidden bg-[#fafbfc] py-20 sm:py-28 lg:py-32">
+      {/* Ambient Gradient Glows matching design */}
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        {/* Top-Right Lime / Yellow Glow */}
+        <div className="absolute -top-24 right-0 h-[450px] w-[550px] rounded-full bg-[#d7ff2e]/30 blur-[130px] sm:h-[550px] sm:w-[650px]" />
+        
+        {/* Mid-Top Lime Accent */}
+        <div className="absolute top-10 left-1/2 -translate-x-1/3 h-[320px] w-[420px] rounded-full bg-[#ccff00]/20 blur-[110px]" />
+
+        {/* Bottom-Left Soft Blue Glow */}
+        <div className="absolute -bottom-20 -left-20 h-[420px] w-[480px] rounded-full bg-[#93c5fd]/35 blur-[120px]" />
+        
+        {/* Bottom-Right Soft Violet Tint */}
+        <div className="absolute -bottom-24 right-1/4 h-[300px] w-[350px] rounded-full bg-[#c7d2fe]/25 blur-[100px]" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header: Title on Left, Description on Right */}
+        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-start lg:gap-12">
+          <div className="max-w-xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl lg:text-[42px] lg:leading-[1.18]">
+              Discover What Our <br />
+              Community Is Saying
+            </h2>
+          </div>
+
+          <div className="max-w-xl lg:max-w-[500px] lg:pt-1">
+            <p className="text-xs sm:text-sm lg:text-[14.5px] leading-relaxed text-zinc-600 font-normal">
+              At ByteSpace, our vibrant community of learners and creators is at the heart of what we do. Hear directly from those who have experienced the transformative journey of learning and creating on our platform. Explore testimonials that reflect the diverse perspectives of enthusiastic learners and accomplished creators.
+            </p>
+          </div>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
+        {/* 3 Testimonials Cards Grid */}
+        <div className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col justify-between rounded-2xl border border-zinc-200 bg-zinc-50/50 p-8 dark:border-zinc-800 dark:bg-zinc-900/50"
+              className="group relative flex flex-col rounded-[28px] sm:rounded-[32px] border border-zinc-200/90 bg-white p-7 sm:p-8 lg:p-9 shadow-[0_4px_24px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_36px_rgba(0,0,0,0.07)]"
             >
-              <div>
-                <div className="flex gap-1 text-amber-400">
-                  {Array.from({ length: item.rating }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
-                  ))}
-                </div>
-                <p className="mt-4 text-sm leading-6 text-zinc-700 dark:text-zinc-300 italic">
-                  &ldquo;{item.review}&rdquo;
-                </p>
+              {/* User Avatar */}
+              <div className="relative h-14 w-14 sm:h-16 sm:w-16 overflow-hidden rounded-full ring-2 ring-zinc-100 shadow-sm">
+                <Image
+                  src={item.avatar}
+                  alt={item.name}
+                  fill
+                  className="object-cover"
+                  sizes="64px"
+                />
               </div>
 
-              <div className="mt-6 border-t border-zinc-200/80 pt-4 dark:border-zinc-800/80">
-                <p className="text-sm font-semibold text-zinc-900 dark:text-white">
+              {/* Name & Role */}
+              <div className="mt-5 sm:mt-6">
+                <h3 className="text-base sm:text-[17px] font-bold text-zinc-900 tracking-tight">
                   {item.name}
-                </p>
-                <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                </h3>
+                <p className="text-xs sm:text-[13px] font-semibold text-[#0052FE] mt-0.5">
                   {item.role}
                 </p>
               </div>
+
+              {/* Quote */}
+              <p className="mt-4 sm:mt-5 text-xs sm:text-[13.5px] leading-relaxed text-zinc-600 font-normal">
+                {item.quote}
+              </p>
             </div>
           ))}
         </div>

@@ -10,7 +10,7 @@ export default function CompanyLogos() {
   ];
 
   return (
-    <section className="border-y border-zinc-200/70 bg-[#F1F3F7] py-10 sm:py-12 dark:border-zinc-800 dark:bg-zinc-900">
+    <section className="border-y border-zinc-200/80 bg-[#F2F4F7] py-10 sm:py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
         <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 md:justify-between">
           {logos.map((logo, index) => (
@@ -26,7 +26,7 @@ export default function CompanyLogos() {
                   className="object-contain"
                 />
               </div>
-              <span className="text-base font-bold tracking-tight text-[#64748B] sm:text-lg dark:text-zinc-300">
+              <span className="text-base font-bold tracking-tight text-[#64748B] sm:text-lg">
                 {logo.name}
               </span>
             </div>

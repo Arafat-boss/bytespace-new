@@ -6,6 +6,7 @@ import Courses from "@/components/home/Courses";
 import LearningPaths from "@/components/home/LearningPaths";
 import GrowthAndCreation from "@/components/home/GrowthAndCreation";
 import CTA from "@/components/home/CTA";
+import Testimonials from "@/components/home/Testimonials";
 
 export default function Home() {
   return (
@@ -31,7 +32,10 @@ export default function Home() {
       {/* 6. Creator CTA Banner with Royal Blue Grid */}
       <CTA />
 
-      {/* 7. Footer */}
+      {/* 7. Community Testimonials Section */}
+      <Testimonials />
+
+      {/* 8. Footer */}
       <Footer />
     </div>
   );
