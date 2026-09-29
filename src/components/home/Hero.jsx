@@ -27,11 +27,11 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative overflow-hidden pt-8 pb-0 sm:pt-12">
-      {/* 3D Floating Shapes (Left) */}
+    <section className="relative flex-1 flex flex-col justify-between overflow-hidden pt-4 sm:pt-8 pb-0">
+      {/* 3D Floating Shapes (Left & Right) */}
       <div className="pointer-events-none absolute left-0 top-0 h-full w-full overflow-hidden z-10">
         {/* Top-Left Green Spiral */}
-        <div className="absolute -left-4 sm:left-2 lg:left-6 top-8 sm:top-12 w-28 sm:w-36 lg:w-44 animate-float-slow">
+        <div className="absolute -left-6 sm:left-2 lg:left-6 top-4 sm:top-8 w-24 sm:w-36 lg:w-44 animate-float-slow opacity-75 sm:opacity-100">
           <Image
             src="/assets/hero/left1.png"
             alt="Floating 3D Spiral"
@@ -43,7 +43,7 @@ export default function Hero() {
         </div>
 
         {/* Mid-Left White Zigzag */}
-        <div className="absolute left-16 sm:left-32 lg:left-44 top-72 sm:top-80 w-14 sm:w-16 lg:w-20 animate-float-reverse">
+        <div className="hidden sm:block absolute left-16 sm:left-32 lg:left-44 top-60 sm:top-72 w-14 sm:w-16 lg:w-20 animate-float-reverse">
           <Image
             src="/assets/hero/left2.png"
             alt="Floating 3D Zigzag"
@@ -54,7 +54,7 @@ export default function Hero() {
         </div>
 
         {/* Bottom-Left White Donut / Torus */}
-        <div className="absolute left-2 sm:left-8 lg:left-14 bottom-24 sm:bottom-32 w-32 sm:w-40 lg:w-48 animate-float-slow">
+        <div className="hidden md:block absolute left-2 sm:left-8 lg:left-14 bottom-20 sm:bottom-28 w-32 sm:w-40 lg:w-48 animate-float-slow">
           <Image
             src="/assets/hero/left3.png"
             alt="Floating 3D Torus"
@@ -65,7 +65,7 @@ export default function Hero() {
         </div>
 
         {/* Top-Right Green Cylinder */}
-        <div className="absolute -right-4 sm:right-2 lg:right-6 top-8 sm:top-12 w-28 sm:w-36 lg:w-44 animate-float-slow">
+        <div className="absolute -right-6 sm:right-2 lg:right-6 top-4 sm:top-8 w-24 sm:w-36 lg:w-44 animate-float-slow opacity-75 sm:opacity-100">
           <Image
             src="/assets/hero/right1.png"
             alt="Floating 3D Cylinder"
@@ -77,7 +77,7 @@ export default function Hero() {
         </div>
 
         {/* Mid-Right White Pyramid */}
-        <div className="absolute right-16 sm:right-36 lg:right-48 top-64 sm:top-72 w-16 sm:w-20 lg:w-24 animate-float-reverse">
+        <div className="hidden sm:block absolute right-16 sm:right-36 lg:right-48 top-56 sm:top-64 w-16 sm:w-20 lg:w-24 animate-float-reverse">
           <Image
             src="/assets/hero/right2.png"
             alt="Floating 3D Pyramid"
@@ -88,7 +88,7 @@ export default function Hero() {
         </div>
 
         {/* Bottom-Right White Spiral */}
-        <div className="absolute right-4 sm:right-10 lg:right-16 bottom-20 sm:bottom-28 w-28 sm:w-36 lg:w-40 animate-float-slow">
+        <div className="hidden md:block absolute right-4 sm:right-10 lg:right-16 bottom-16 sm:bottom-24 w-28 sm:w-36 lg:w-40 animate-float-slow">
           <Image
             src="/assets/hero/right3.png"
             alt="Floating 3D Spiral"
@@ -100,23 +100,23 @@ export default function Hero() {
       </div>
 
       {/* Hero Headline & Search Content */}
-      <div className="relative z-20 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[62px] lg:leading-[1.15]">
+      <div className="relative z-20 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8 my-auto pt-4 sm:pt-6">
+        <h1 className="text-3xl font-extrabold tracking-tight text-white xs:text-4xl sm:text-5xl lg:text-[62px] lg:leading-[1.15]">
           Get Access to Hundreds <br />
           Courses Available
         </h1>
 
-        <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-base">
+        <p className="mx-auto mt-4 sm:mt-5 max-w-2xl text-xs xs:text-sm sm:text-base leading-relaxed text-white/85">
           Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.
         </p>
 
         {/* Search Bar */}
-        <div className="mx-auto mt-8 max-w-xl">
+        <div className="mx-auto mt-6 sm:mt-8 max-w-xl">
           <form
             onSubmit={handleSearchSubmit}
-            className="flex items-center rounded-full bg-white p-1.5 pl-5 sm:pl-6 shadow-2xl shadow-blue-950/40"
+            className="flex items-center rounded-full bg-white p-1.5 pl-4 sm:pl-6 shadow-2xl shadow-blue-950/40"
           >
-            <Search className="h-4 w-4 text-zinc-400 sm:h-5 sm:w-5 mr-3 shrink-0" />
+            <Search className="h-4 w-4 text-zinc-400 sm:h-5 sm:w-5 mr-2 sm:mr-3 shrink-0" />
             <input
               type="text"
               value={searchQuery}
@@ -126,7 +126,7 @@ export default function Hero() {
             />
             <button
               type="submit"
-              className="rounded-full bg-[#D2FF00] px-6 py-2.5 sm:px-8 sm:py-3 text-xs sm:text-sm font-semibold text-zinc-950 transition hover:bg-[#c3ec00] active:scale-95 shadow-sm cursor-pointer"
+              className="rounded-full bg-[#D2FF00] px-5 py-2 sm:px-8 sm:py-3 text-xs sm:text-sm font-semibold text-zinc-950 transition hover:bg-[#c3ec00] active:scale-95 shadow-sm shrink-0 cursor-pointer"
             >
               Search
             </button>
@@ -135,10 +135,10 @@ export default function Hero() {
       </div>
 
       {/* Visual Section: Green Arc + Student + Interactive Floating Badges */}
-      <div className="relative z-20 mx-auto mt-12 sm:mt-16 max-w-5xl flex flex-col items-center justify-center px-4">
+      <div className="relative z-20 mx-auto mt-8 sm:mt-12 max-w-5xl flex flex-col items-center justify-end px-4 w-full">
         <div className="relative w-full max-w-[760px] flex items-end justify-center">
           {/* Lime Green Arc in Background */}
-          <div className="relative w-full max-w-[680px] sm:max-w-[760px] -mb-1">
+          <div className="relative w-full max-w-[620px] sm:max-w-[760px] -mb-1">
             <Image
               src="/assets/hero/circel.png"
               alt="Background Arc"
@@ -150,7 +150,7 @@ export default function Hero() {
           </div>
 
           {/* Smiling Student Image */}
-          <div className="absolute bottom-0 w-[300px] sm:w-[420px] lg:w-[480px] z-10 select-none">
+          <div className="absolute bottom-0 w-[240px] xs:w-[280px] sm:w-[400px] lg:w-[480px] z-10 select-none">
             <Image
               src="/assets/hero/student.png"
               alt="Student with laptop and headphones"
@@ -162,7 +162,7 @@ export default function Hero() {
           </div>
 
           {/* Floating Badge 1: UI/UX Design (Top-Left of student) */}
-          <div className="absolute top-4 sm:top-10 left-2 sm:left-8 lg:left-14 z-30 rounded-2xl border border-white/60 bg-white/95 p-3.5 sm:p-4 shadow-xl backdrop-blur-sm text-left">
+          <div className="absolute top-2 sm:top-10 left-1 sm:left-8 lg:left-14 z-30 scale-75 xs:scale-90 sm:scale-100 origin-top-left rounded-2xl border border-white/60 bg-white/95 p-3 sm:p-4 shadow-xl backdrop-blur-sm text-left">
             <p className="text-xs sm:text-sm font-bold text-zinc-900">
               UI/UX Design
             </p>
@@ -172,7 +172,7 @@ export default function Hero() {
           </div>
 
           {/* Floating Badge 2: Happy Students (Bottom-Left of student) */}
-          <div className="absolute bottom-6 sm:bottom-12 left-0 sm:left-6 lg:left-10 z-30 rounded-2xl border border-white/60 bg-white/95 p-3 sm:p-4 shadow-xl backdrop-blur-sm text-left">
+          <div className="absolute bottom-2 sm:bottom-12 left-0 sm:left-6 lg:left-10 z-30 scale-75 xs:scale-90 sm:scale-100 origin-bottom-left rounded-2xl border border-white/60 bg-white/95 p-2.5 sm:p-4 shadow-xl backdrop-blur-sm text-left">
             <p className="text-xs sm:text-sm font-bold text-zinc-900">
               Happy Students
             </p>
@@ -181,11 +181,11 @@ export default function Hero() {
               <span>(240)</span>
               <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
             </div>
-            <div className="mt-2.5 flex items-center -space-x-2">
+            <div className="mt-2 flex items-center -space-x-1.5 sm:-space-x-2">
               {studentAvatars.map((url, i) => (
                 <div
                   key={i}
-                  className="relative h-6 w-6 sm:h-7 sm:w-7 overflow-hidden rounded-full border-2 border-white shadow-sm"
+                  className="relative h-5 w-5 sm:h-7 sm:w-7 overflow-hidden rounded-full border-2 border-white shadow-sm"
                 >
                   <img
                     src={url}
@@ -194,21 +194,21 @@ export default function Hero() {
                   />
                 </div>
               ))}
-              <div className="flex h-6 sm:h-7 items-center justify-center rounded-full border-2 border-white bg-[#D2FF00] px-2 text-[10px] sm:text-[11px] font-bold text-zinc-950 shadow-sm">
+              <div className="flex h-5 sm:h-7 items-center justify-center rounded-full border-2 border-white bg-[#D2FF00] px-1.5 sm:px-2 text-[9px] sm:text-[11px] font-bold text-zinc-950 shadow-sm">
                 2K+
               </div>
             </div>
           </div>
 
           {/* Floating Badge 3: Learning Progress (Right of student) */}
-          <div className="absolute top-12 sm:top-20 right-2 sm:right-6 lg:right-12 z-30 min-w-[150px] sm:min-w-[180px] rounded-2xl border border-white/60 bg-white/95 p-3.5 sm:p-5 shadow-xl backdrop-blur-sm text-left">
-            <p className="text-[11px] sm:text-xs font-medium text-zinc-500">
+          <div className="absolute top-6 sm:top-20 right-1 sm:right-6 lg:right-12 z-30 scale-75 xs:scale-90 sm:scale-100 origin-top-right min-w-[130px] sm:min-w-[180px] rounded-2xl border border-white/60 bg-white/95 p-3 sm:p-5 shadow-xl backdrop-blur-sm text-left">
+            <p className="text-[10px] sm:text-xs font-medium text-zinc-500">
               Learning Progress
             </p>
-            <p className="mt-0.5 text-2xl sm:text-3xl font-extrabold text-zinc-900">
+            <p className="mt-0.5 text-xl sm:text-3xl font-extrabold text-zinc-900">
               55%
             </p>
-            <div className="mt-2.5 sm:mt-3 h-2 w-full overflow-hidden rounded-full bg-zinc-100">
+            <div className="mt-2 sm:mt-3 h-1.5 sm:h-2 w-full overflow-hidden rounded-full bg-zinc-100">
               <div
                 className="h-full rounded-full bg-[#D2FF00]"
                 style={{ width: "55%" }}
