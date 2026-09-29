@@ -4,6 +4,7 @@ import Hero from "@/components/home/Hero";
 import CompanyLogos from "@/components/home/CompanyLogos";
 import Courses from "@/components/home/Courses";
 import LearningPaths from "@/components/home/LearningPaths";
+import GrowthAndCreation from "@/components/home/GrowthAndCreation";
 import Features from "@/components/home/Features";
 import About from "@/components/home/About";
 import Services from "@/components/home/Services";
@@ -27,6 +28,9 @@ export default function Home() {
 
       {/* Learning Paths Section */}
       <LearningPaths />
+
+      {/* Growth & Course Creation Dual Showcase Section (Seamless Continuous Background) */}
+      <GrowthAndCreation />
 
       {/* Other Sections */}
       <main className="flex-1">
