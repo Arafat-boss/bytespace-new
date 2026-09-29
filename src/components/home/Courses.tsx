@@ -189,9 +189,11 @@ export default function Courses() {
 
                 {/* Title & Rating */}
                 <div className="mt-5 flex items-center justify-between gap-2">
-                  <h3 className="text-lg sm:text-[19px] font-bold text-zinc-900 line-clamp-1">
-                    {course.title}
-                  </h3>
+                  <Link href="/courses/1" className="hover:text-[#0052FE] transition-colors">
+                    <h3 className="text-lg sm:text-[19px] font-bold text-zinc-900 line-clamp-1 hover:text-[#0052FE] transition-colors">
+                      {course.title}
+                    </h3>
+                  </Link>
                   <div className="flex items-center gap-1 shrink-0 text-sm sm:text-base font-semibold text-zinc-500">
                     <span>{course.rating}</span>
                     <Star className="h-4 w-4 fill-zinc-400 text-zinc-400" />
