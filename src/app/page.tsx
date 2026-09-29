@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
 import CompanyLogos from "@/components/home/CompanyLogos";
+import Courses from "@/components/home/Courses";
 import Features from "@/components/home/Features";
 import About from "@/components/home/About";
 import Services from "@/components/home/Services";
@@ -20,7 +21,10 @@ export default function Home() {
       {/* Company Logos Bar */}
       <CompanyLogos />
 
-      {/* Main Page Sections */}
+      {/* Courses Section */}
+      <Courses />
+
+      {/* Other Sections */}
       <main className="flex-1">
         <Features />
         <About />
