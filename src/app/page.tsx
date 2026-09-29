@@ -10,15 +10,21 @@ import CTA from "@/components/home/CTA";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-white text-zinc-900 antialiased dark:bg-black dark:text-zinc-50">
-      <Navbar />
-      <main className="flex-1">
+      {/* Top Banner Section with Royal Blue Grid Pattern */}
+      <div className="hero-grid-pattern relative w-full overflow-hidden">
+        <Navbar />
         <Hero />
+      </div>
+
+      {/* Main Page Sections */}
+      <main className="flex-1">
         <Features />
         <About />
         <Services />
         <Testimonials />
         <CTA />
       </main>
+
       <Footer />
     </div>
   );
