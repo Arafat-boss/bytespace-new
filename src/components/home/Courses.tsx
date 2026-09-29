@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { Star, BarChart2 } from "lucide-react";
 
@@ -147,9 +148,12 @@ export default function Courses() {
               </button>
             );
           })}
-          <button className="rounded-full px-4 py-2 text-xs sm:text-sm font-semibold text-indigo-600 hover:text-indigo-500 transition">
+          <Link
+            href="/search"
+            className="rounded-full px-4 py-2 text-xs sm:text-sm font-semibold text-indigo-600 hover:text-indigo-500 transition cursor-pointer"
+          >
             + More
-          </button>
+          </Link>
         </div>
 
         {/* Courses Cards Grid */}

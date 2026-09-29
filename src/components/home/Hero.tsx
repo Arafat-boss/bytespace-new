@@ -1,9 +1,23 @@
 "use client";
 
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Search, Star } from "lucide-react";
 
 export default function Hero() {
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    } else {
+      router.push("/search");
+    }
+  };
+
   const studentAvatars = [
     "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces&auto=format&q=80",
@@ -99,18 +113,20 @@ export default function Hero() {
         {/* Search Bar */}
         <div className="mx-auto mt-8 max-w-xl">
           <form
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSearchSubmit}
             className="flex items-center rounded-full bg-white p-1.5 pl-5 sm:pl-6 shadow-2xl shadow-blue-950/40"
           >
             <Search className="h-4 w-4 text-zinc-400 sm:h-5 sm:w-5 mr-3 shrink-0" />
             <input
               type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Course, topic, creator"
               className="w-full bg-transparent text-xs sm:text-sm text-zinc-800 placeholder-zinc-400 outline-none"
             />
             <button
               type="submit"
-              className="rounded-full bg-[#D2FF00] px-6 py-2.5 sm:px-8 sm:py-3 text-xs sm:text-sm font-semibold text-zinc-950 transition hover:bg-[#c3ec00] active:scale-95 shadow-sm"
+              className="rounded-full bg-[#D2FF00] px-6 py-2.5 sm:px-8 sm:py-3 text-xs sm:text-sm font-semibold text-zinc-950 transition hover:bg-[#c3ec00] active:scale-95 shadow-sm cursor-pointer"
             >
               Search
             </button>

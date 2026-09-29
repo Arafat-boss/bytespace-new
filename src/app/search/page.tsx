@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SearchBanner from "@/components/search/SearchBanner";
@@ -9,7 +10,9 @@ export default function SearchPage() {
       {/* 1. Top Banner with Royal Blue Grid Pattern */}
       <div className="hero-grid-pattern relative w-full overflow-hidden">
         <Navbar />
-        <SearchBanner />
+        <Suspense fallback={<div className="py-20 text-center text-white">Loading...</div>}>
+          <SearchBanner />
+        </Suspense>
       </div>
 
       {/* 2. Search Results / Courses Section */}

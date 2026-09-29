@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Search as SearchIcon, ChevronDown } from "lucide-react";
 
 export default function SearchBanner({
@@ -12,9 +13,18 @@ export default function SearchBanner({
   selectedType?: string;
   onTypeChange?: (type: string) => void;
 }) {
-  const [query, setQuery] = useState("");
+  const searchParams = useSearchParams();
+  const [query, setQuery] = useState(searchParams.get("q") || "");
   const [currentType, setCurrentType] = useState(selectedType);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    const q = searchParams.get("q");
+    if (q !== null) {
+      setQuery(q);
+      onSearch?.(q);
+    }
+  }, [searchParams]);
 
   const types = ["Courses", "Creators", "Categories", "Articles"];
 
