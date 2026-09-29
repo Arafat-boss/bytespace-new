@@ -21,29 +21,19 @@ export default function LoginPage() {
         {/* Left Column: Brand, Intro, and 3D Showcase Collage */}
         <div className="lg:col-span-6 flex flex-col justify-between h-full">
           <div>
-            {/* Top Bar: Logo & Back to Home */}
-            <div className="flex items-center justify-between">
-              <Link href="/" className="inline-flex items-center gap-2.5 transition hover:opacity-90">
-                <div className="relative h-9 w-9 flex items-center justify-center">
-                  <Image
-                    src="/assets/Logo.png"
-                    alt="ByteSpace Logo"
-                    width={36}
-                    height={36}
-                    className="h-9 w-auto object-contain"
-                    priority
-                  />
-                </div>
-              </Link>
-
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm font-medium text-white backdrop-blur-md transition-all hover:bg-white/20 border border-white/15 shadow-sm active:scale-95"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                <span>Back to Home</span>
-              </Link>
-            </div>
+            {/* Logo */}
+            <Link href="/" className="inline-flex items-center gap-2.5 transition hover:opacity-90">
+              <div className="relative h-9 w-9 flex items-center justify-center">
+                <Image
+                  src="/assets/Logo.png"
+                  alt="ByteSpace Logo"
+                  width={36}
+                  height={36}
+                  className="h-9 w-auto object-contain"
+                  priority
+                />
+              </div>
+            </Link>
 
             {/* Intro Text */}
             <h1 className="mt-6 text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight text-white">
@@ -52,6 +42,17 @@ export default function LoginPage() {
             <p className="mt-3 max-w-md text-xs sm:text-sm leading-relaxed text-white/80">
               Experience a seamless and efficient sign-in process that grants you instant access to a world of knowledge.
             </p>
+
+            {/* Back to Home Button (under description) */}
+            <div className="mt-4 sm:mt-5">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm font-medium text-white backdrop-blur-md transition-all duration-200 hover:bg-white/20 border border-white/15 shadow-sm active:scale-95"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                <span>Back to Home</span>
+              </Link>
+            </div>
           </div>
 
           {/* 3D Collage Graphic Stack */}
