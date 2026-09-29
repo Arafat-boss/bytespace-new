@@ -3,19 +3,19 @@ import Image from "next/image";
 
 export default function Footer() {
   const column1 = [
-    { label: "Featured Courses", href: "#courses" },
-    { label: "Featured Categories", href: "#categories" },
-    { label: "Business", href: "#" },
-    { label: "IT", href: "#" },
-    { label: "Design", href: "#" },
+    { label: "Featured Courses", href: "/search" },
+    { label: "Featured Categories", href: "/search" },
+    { label: "Business", href: "/search?category=Marketing" },
+    { label: "IT", href: "/search?category=Data%20Science" },
+    { label: "Design", href: "/search?category=UI%2FUX%20Design" },
   ];
 
   const column2 = [
-    { label: "Development", href: "#" },
-    { label: "Marketing", href: "#" },
-    { label: "Photography", href: "#" },
-    { label: "Finance", href: "#" },
-    { label: "Sport", href: "#" },
+    { label: "Development", href: "/search?category=Web%20Development" },
+    { label: "Marketing", href: "/search?category=Marketing" },
+    { label: "Photography", href: "/search?category=Drawing%20%26%20Painting" },
+    { label: "Finance", href: "/search?category=Marketing" },
+    { label: "Sport", href: "/search" },
   ];
 
   const column3 = [

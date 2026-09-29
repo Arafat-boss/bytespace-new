@@ -36,7 +36,7 @@ export default function Navbar() {
           <Link href="/" className="transition-colors hover:text-white">
             Home
           </Link>
-          <Link href="/#courses" className="transition-colors hover:text-white">
+          <Link href="/search" className="transition-colors hover:text-white">
             Courses
           </Link>
           <Link href="/creators" className="transition-colors hover:text-white">
@@ -94,7 +94,7 @@ export default function Navbar() {
               Home
             </Link>
             <Link
-              href="/#courses"
+              href="/search"
               onClick={() => setMobileMenuOpen(false)}
               className="py-1.5 transition-colors hover:text-[#D2FF00]"
             >

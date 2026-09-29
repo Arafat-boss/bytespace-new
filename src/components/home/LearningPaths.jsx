@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   PencilRuler,
   Code2,
@@ -11,26 +12,32 @@ export default function LearningPaths() {
   const paths = [
     {
       title: "Design",
+      category: "UI/UX Design",
       icon: <PencilRuler className="h-6 w-6 sm:h-7 sm:w-7 text-black stroke-[2.2]" />,
     },
     {
       title: "Development",
+      category: "Web Development",
       icon: <Code2 className="h-6 w-6 sm:h-7 sm:w-7 text-black stroke-[2.2]" />,
     },
     {
       title: "IT & Software",
+      category: "Data Science",
       icon: <Laptop className="h-6 w-6 sm:h-7 sm:w-7 text-black stroke-[2.2]" />,
     },
     {
       title: "Business",
+      category: "Marketing",
       icon: <Building2 className="h-6 w-6 sm:h-7 sm:w-7 text-black stroke-[2.2]" />,
     },
     {
       title: "Marketing",
+      category: "Marketing",
       icon: <Megaphone className="h-6 w-6 sm:h-7 sm:w-7 text-black stroke-[2.2]" />,
     },
     {
       title: "Photography",
+      category: "Drawing & Painting",
       icon: <Camera className="h-6 w-6 sm:h-7 sm:w-7 text-black stroke-[2.2]" />,
     },
   ];
@@ -51,8 +58,9 @@ export default function LearningPaths() {
         {/* 6 Category Path Cards Grid */}
         <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 sm:gap-6">
           {paths.map((path, index) => (
-            <div
+            <Link
               key={index}
+              href={`/search?category=${encodeURIComponent(path.category)}`}
               className="group flex flex-col items-center justify-center rounded-[24px] border border-zinc-200/90 bg-white p-6 sm:p-7 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl cursor-pointer"
             >
               {/* Lime Icon Circle */}
@@ -64,7 +72,7 @@ export default function LearningPaths() {
               <h3 className="mt-5 text-sm sm:text-base font-semibold text-zinc-800 transition-colors group-hover:text-black">
                 {path.title}
               </h3>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
