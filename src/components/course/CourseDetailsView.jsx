@@ -22,6 +22,7 @@ export default function CourseDetailsView({ course }) {
 
   const [activeTab, setActiveTab] = useState("About");
   const [isEnrolled, setIsEnrolled] = useState(false);
+  const [selectedRatingFilter, setSelectedRatingFilter] = useState("all");
 
   return (
     <div className="w-full">
@@ -278,102 +279,201 @@ export default function CourseDetailsView({ course }) {
 
               {/* TAB 3: Reviews */}
               {activeTab === "Reviews" && (
-                <div className="mt-8 sm:mt-10 space-y-8 animate-in fade-in duration-300">
+                <div className="mt-8 sm:mt-10 space-y-8 sm:space-y-10 animate-in fade-in duration-300">
+                  {/* 1. Header & Description */}
                   <div>
                     <h2 className="text-lg sm:text-xl font-bold tracking-tight text-zinc-950">
-                      Student Reviews & Feedback
+                      What Learners Are Saying
                     </h2>
-                    <p className="mt-2 text-xs sm:text-[13.5px] text-zinc-600 font-normal">
-                      See what students who completed this course have to say.
+                    <p className="mt-3 text-xs sm:text-[13.5px] leading-relaxed text-zinc-600 font-normal max-w-3xl">
+                      Discover what our learners have to say about their experience with &apos;{currentCourse.title}.&apos; Read reviews and ratings from individuals who have embarked on the transformative journey of mastering {currentCourse.category ? currentCourse.category.toLowerCase() : "digital"} creation.
                     </p>
                   </div>
 
-                  {/* Overall Rating Box */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-6 rounded-2xl border border-zinc-200/90 bg-zinc-50/60 p-6">
-                    <div className="text-center sm:text-left sm:pr-8 sm:border-r sm:border-zinc-200">
-                      <div className="text-4xl font-black text-zinc-950">
-                        {currentCourse.rating}
-                      </div>
-                      <div className="mt-1 flex items-center justify-center sm:justify-start gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-[#EAB308] text-[#EAB308]" />
-                        ))}
-                      </div>
-                      <p className="mt-1 text-xs text-zinc-500 font-medium">
-                        Based on {currentCourse.reviewsCount} reviews
-                      </p>
+                  {/* 2. Rating Breakdown Card */}
+                  <div className="rounded-2xl sm:rounded-3xl border border-zinc-200/90 bg-white p-6 sm:p-7 shadow-xs flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+                    {/* Big Lime Rating Badge */}
+                    <div className="flex h-28 w-28 sm:h-32 sm:w-32 flex-col items-center justify-center rounded-2xl bg-[#D2FF00] shrink-0 shadow-xs">
+                      <span className="text-xs font-semibold text-zinc-900">
+                        Ratings
+                      </span>
+                      <span className="mt-0.5 text-3xl sm:text-4xl font-black text-zinc-950 tracking-tight">
+                        {currentCourse.rating || "4.7"}
+                      </span>
                     </div>
 
-                    <div className="flex-1 space-y-2">
+                    {/* Progress Breakdown Bars */}
+                    <div className="flex-1 w-full space-y-2.5">
                       {[
-                        { stars: "5 Stars", pct: "88%" },
-                        { stars: "4 Stars", pct: "10%" },
-                        { stars: "3 Stars", pct: "2%" },
-                        { stars: "2 Stars", pct: "0%" },
-                        { stars: "1 Star", pct: "0%" },
-                      ].map((item, i) => (
-                        <div key={i} className="flex items-center gap-3 text-xs">
-                          <span className="w-12 text-zinc-600 font-medium">{item.stars}</span>
-                          <div className="h-2 flex-1 rounded-full bg-zinc-200 overflow-hidden">
+                        { stars: 5, count: 720, width: "80%" },
+                        { stars: 4, count: 120, width: "35%" },
+                        { stars: 3, count: 21, width: "8%" },
+                        { stars: 2, count: 12, width: "4%" },
+                        { stars: 1, count: 16, width: "6%" },
+                      ].map((row) => (
+                        <div key={row.stars} className="flex items-center gap-3 sm:gap-4 text-xs">
+                          {/* Progress Line */}
+                          <div className="h-2 sm:h-2.5 flex-1 rounded-full bg-zinc-100 overflow-hidden border border-zinc-200/40">
                             <div
-                              className="h-full rounded-full bg-[#EAB308]"
-                              style={{ width: item.pct }}
+                              className="h-full bg-[#D2FF00] rounded-full transition-all duration-700 ease-out"
+                              style={{ width: row.width }}
                             />
                           </div>
-                          <span className="w-8 text-right text-zinc-500 font-semibold">{item.pct}</span>
+
+                          {/* 5 Dark Stars */}
+                          <div className="flex items-center gap-0.5 text-zinc-800 shrink-0">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className="h-3 w-3 sm:h-3.5 sm:w-3.5 fill-zinc-800 text-zinc-800" />
+                            ))}
+                          </div>
+
+                          {/* Count */}
+                          <span className="w-8 text-right text-[11px] sm:text-xs font-medium text-zinc-600 shrink-0">
+                            {row.count}
+                          </span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  {/* Sample Reviews List */}
-                  <div className="space-y-4">
+                  {/* 3. Individual Reviews Filter Pills */}
+                  <div className="space-y-3.5">
+                    <h3 className="text-sm sm:text-base font-bold text-zinc-950">
+                      Individual Reviews:
+                    </h3>
+
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+                      <button
+                        type="button"
+                        onClick={() => setSelectedRatingFilter("all")}
+                        className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+                          selectedRatingFilter === "all"
+                            ? "bg-[#D2FF00] text-zinc-950 font-bold shadow-xs"
+                            : "bg-zinc-100/90 text-zinc-700 hover:bg-zinc-200"
+                        }`}
+                      >
+                        All rating
+                      </button>
+
+                      {[5, 4, 3, 2, 1].map((rating) => {
+                        const isFilterActive = selectedRatingFilter === String(rating);
+                        return (
+                          <button
+                            key={rating}
+                            type="button"
+                            onClick={() => setSelectedRatingFilter(String(rating))}
+                            className={`inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+                              isFilterActive
+                                ? "bg-[#D2FF00] text-zinc-950 font-bold shadow-xs"
+                                : "bg-zinc-100/90 text-zinc-700 hover:bg-zinc-200"
+                            }`}
+                          >
+                            <Star className={`h-3 w-3 ${isFilterActive ? "fill-zinc-950 text-zinc-950" : "fill-zinc-700 text-zinc-700"}`} />
+                            <span>{rating}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* 4. Individual Review Cards */}
+                  <div className="space-y-4 sm:space-y-5">
                     {[
                       {
-                        name: "Alex Johnson",
-                        role: "Product Designer at Stripe",
+                        id: 1,
+                        name: "PurePearl Studio",
+                        role: "UI/UX Designer",
                         avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop",
-                        comment: "This course completely transformed my workflow. The explanations are concise, practical, and immediately applicable to real-world products!",
-                        date: "2 days ago",
+                        date: "a year ago",
+                        stars: 5,
+                        comment: '"The course provided me with a comprehensive understanding of digital asset creation. The lessons were in-depth, practical, and immediately applicable to my work. Highly recommended!"',
                       },
                       {
-                        name: "Sarah Chen",
-                        role: "UX Researcher",
-                        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop",
-                        comment: "Best investment I've made for my professional development. The module breakdowns and lesson tracking made it super easy to stay motivated.",
-                        date: "1 week ago",
-                      },
-                      {
-                        name: "David Miller",
-                        role: "Creative Director",
+                        id: 2,
+                        name: "Albert Flores",
+                        role: "UI/UX Designer",
                         avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop",
-                        comment: "Exceptional quality videos and downloadable resources. Highly recommended for anyone looking to level up their craft!",
-                        date: "2 weeks ago",
+                        date: "a year ago",
+                        stars: 5,
+                        comment: "This course transformed my approach to digital design. The combination of theory, hands-on exercises, and real-world applications made it a truly enriching experience. Excited to implement what I've learned!",
                       },
-                    ].map((rev, idx) => (
-                      <div key={idx} className="rounded-2xl border border-zinc-200/80 p-5 bg-white shadow-xs">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-3">
-                            <div className="relative h-10 w-10 rounded-full overflow-hidden bg-zinc-200">
-                              <Image src={rev.avatar} alt={rev.name} fill className="object-cover" />
+                      {
+                        id: 3,
+                        name: "Cody Fisher",
+                        role: "UI/UX Designer",
+                        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop",
+                        date: "a year ago",
+                        stars: 5,
+                        comment: "The project showcase and critique module created a collaborative environment where I could showcase my work, receive valuable feedback, and refine my skills. It added a unique and valuable dimension to the learning process.",
+                      },
+                      {
+                        id: 4,
+                        name: "Brooklyn Simmons",
+                        role: "UI/UX Designer",
+                        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop",
+                        date: "a year ago",
+                        stars: 5,
+                        comment: "The lessons on optimizing digital assets for various platforms were particularly insightful. The course adapts to the evolving digital landscape, and the engaging content kept me motivated throughout.",
+                      },
+                      {
+                        id: 5,
+                        name: "Eleanor Pena",
+                        role: "Product Strategist",
+                        avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+                        date: "a year ago",
+                        stars: 4,
+                        comment: "Great pacing and practical frameworks. The exercises gave me immediate clarity on building scalable design systems.",
+                      },
+                      {
+                        id: 6,
+                        name: "Guy Hawkins",
+                        role: "Digital Specialist",
+                        avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=150&auto=format&fit=crop",
+                        date: "a year ago",
+                        stars: 3,
+                        comment: "Good structured lessons and clear instructor communication. Recommended for getting familiar with core tools.",
+                      },
+                    ]
+                      .filter((rev) => (selectedRatingFilter === "all" ? true : rev.stars === Number(selectedRatingFilter)))
+                      .map((rev) => (
+                        <div
+                          key={rev.id}
+                          className="rounded-2xl sm:rounded-3xl border border-zinc-200/90 bg-white p-5 sm:p-6 shadow-xs space-y-3.5 transition hover:border-zinc-300"
+                        >
+                          {/* Card Header: Avatar, Name, Role, Date */}
+                          <div className="flex items-start justify-between gap-3">
+                            <div className="flex items-center gap-3">
+                              <div className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-full overflow-hidden bg-zinc-100 shrink-0 border border-zinc-200/60">
+                                <Image src={rev.avatar} alt={rev.name} fill className="object-cover" />
+                              </div>
+                              <div>
+                                <h4 className="text-xs sm:text-sm font-bold text-zinc-950">{rev.name}</h4>
+                                <p className="text-[11px] text-zinc-500 font-medium">{rev.role}</p>
+                              </div>
                             </div>
-                            <div>
-                              <h4 className="text-xs sm:text-sm font-bold text-zinc-950">{rev.name}</h4>
-                              <p className="text-[11px] text-zinc-500">{rev.role}</p>
-                            </div>
+                            <span className="text-[11px] sm:text-xs text-zinc-400 font-normal shrink-0">
+                              {rev.date}
+                            </span>
                           </div>
-                          <span className="text-[11px] text-zinc-400">{rev.date}</span>
+
+                          {/* 5 Dark Stars */}
+                          <div className="flex items-center gap-0.5">
+                            {[...Array(5)].map((_, i) => (
+                              <Star
+                                key={i}
+                                className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${
+                                  i < rev.stars ? "fill-zinc-800 text-zinc-800" : "fill-zinc-200 text-zinc-200"
+                                }`}
+                              />
+                            ))}
+                          </div>
+
+                          {/* Comment Body */}
+                          <p className="text-xs sm:text-[13px] leading-relaxed text-zinc-600 font-normal">
+                            {rev.comment}
+                          </p>
                         </div>
-                        <div className="mt-2.5 flex items-center gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="h-3.5 w-3.5 fill-[#EAB308] text-[#EAB308]" />
-                          ))}
-                        </div>
-                        <p className="mt-2.5 text-xs sm:text-[13px] text-zinc-700 leading-relaxed font-normal">
-                          {rev.comment}
-                        </p>
-                      </div>
-                    ))}
+                      ))}
                   </div>
                 </div>
               )}
