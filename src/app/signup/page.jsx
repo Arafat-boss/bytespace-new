@@ -1,10 +1,52 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Star, BarChart2, ArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Star, BarChart2, ArrowLeft, Loader2, AlertCircle } from "lucide-react";
+import { useAuth } from "@/context/AuthContext";
 
 export default function SignupPage() {
+  const router = useRouter();
+  const { signup, loginWithGoogle } = useAuth();
+
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleEmailSignup = async (e) => {
+    e.preventDefault();
+    setErrorMessage("");
+    setIsSubmitting(true);
+
+    try {
+      await signup(fullName, email, password);
+      router.push("/");
+    } catch (err) {
+      setErrorMessage(err.message || "Failed to create account. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleGoogleSignup = async () => {
+    setErrorMessage("");
+    setIsGoogleLoading(true);
+
+    try {
+      await loginWithGoogle();
+      router.push("/");
+    } catch (err) {
+      setErrorMessage(err.message || "Google sign-up failed. Please try again.");
+    } finally {
+      setIsGoogleLoading(false);
+    }
+  };
+
   const avatars = [
     "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces&q=80",
     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces&q=80",
@@ -43,7 +85,7 @@ export default function SignupPage() {
               The registration process is straightforward, uncomplicated, and efficient, allowing users to sign up quickly, easily, and at no cost.
             </p>
 
-            {/* Back to Home Button (under description) */}
+            {/* Back to Home Button */}
             <div className="mt-4 sm:mt-5">
               <Link
                 href="/"
@@ -57,7 +99,6 @@ export default function SignupPage() {
 
           {/* 3D Collage Graphic Stack */}
           <div className="relative mt-8 sm:mt-12 h-[400px] sm:h-[450px] w-full max-w-[480px]">
-            
             {/* Lime Torus Ring (Top-Left) */}
             <div className="absolute left-2 sm:left-4 top-4 sm:top-6 w-16 sm:w-20 z-30 pointer-events-none animate-float-slow">
               <Image
@@ -69,7 +110,7 @@ export default function SignupPage() {
               />
             </div>
 
-            {/* Card 1: Back Left Card (Build Digital Products) */}
+            {/* Card 1: Back Left Card */}
             <div className="absolute -left-2 sm:left-0 top-12 sm:top-14 w-[270px] sm:w-[310px] rounded-[24px] bg-white/95 p-4 shadow-xl -rotate-3 z-10 opacity-90 border border-white/60 backdrop-blur-sm pointer-events-none">
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[16px] bg-zinc-200">
                 <Image
@@ -103,49 +144,32 @@ export default function SignupPage() {
                       key={i}
                       src={url}
                       alt="Student"
-                      className="h-5 w-5 rounded-full border-2 border-white object-cover"
+                      className="h-5 w-5 rounded-full border border-white object-cover"
                     />
                   ))}
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full border-2 border-white bg-black text-[8px] font-bold text-white">
-                    26+
-                  </span>
                 </div>
-              </div>
-              <div className="mt-2">
-                <span className="text-sm font-extrabold text-[#0052FE]">$25</span>
-                <span className="text-[10px] text-zinc-400 font-normal">/lifetime</span>
               </div>
             </div>
 
-            {/* Card 2: Main Highlight Center Card (the Power of Big Data) */}
-            <div className="absolute left-10 sm:left-14 top-2 w-[300px] sm:w-[350px] lg:w-[370px] rounded-[28px] bg-white p-4 sm:p-5 shadow-2xl z-20 border border-zinc-100">
-              {/* Image Preview with 3 Dark Badges */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[20px] bg-zinc-900">
+            {/* Card 2: Front Main Card */}
+            <div className="absolute left-8 sm:left-14 top-20 sm:top-24 w-[290px] sm:w-[330px] rounded-[28px] bg-white p-5 shadow-2xl z-20 border border-white/80">
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[20px] bg-zinc-100">
                 <Image
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&q=80"
-                  alt="the Power of Big Data"
+                  src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=600&h=400&fit=crop&q=80"
+                  alt="Learn Figma from Basic"
                   fill
                   className="object-cover"
-                  priority
                 />
-                {/* 3 Pills at bottom of preview */}
-                <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between gap-1">
-                  <span className="rounded-full bg-black/65 px-2.5 py-1 text-[10px] font-medium text-white shadow-sm backdrop-blur-md">
+                <div className="absolute bottom-2.5 left-2.5">
+                  <span className="rounded-full bg-white/85 px-3 py-1 text-[11px] font-semibold text-zinc-900 shadow-sm backdrop-blur-md">
                     17 Lessons
-                  </span>
-                  <span className="rounded-full bg-black/65 px-2.5 py-1 text-[10px] font-medium text-white shadow-sm backdrop-blur-md">
-                    2 hours 16 mins
-                  </span>
-                  <span className="rounded-full bg-black/65 px-2.5 py-1 text-[10px] font-medium text-white shadow-sm backdrop-blur-md">
-                    59 Comments
                   </span>
                 </div>
               </div>
 
-              {/* Title & Rating */}
-              <div className="mt-4 flex items-center justify-between gap-2">
-                <h3 className="text-base sm:text-[17px] font-bold text-zinc-900">
-                  the Power of Big Data
+              <div className="mt-4 flex items-center justify-between">
+                <h3 className="text-base font-bold text-zinc-950">
+                  Learn Figma from Basic
                 </h3>
                 <div className="flex items-center gap-1 text-xs sm:text-sm font-bold text-zinc-900">
                   <span>4.5</span>
@@ -153,12 +177,10 @@ export default function SignupPage() {
                 </div>
               </div>
 
-              {/* Author */}
               <p className="mt-0.5 text-xs text-[#0052FE] font-medium">
                 by purepearl studio
               </p>
 
-              {/* Level & Student Avatars */}
               <div className="mt-4 flex items-center justify-between">
                 <div className="flex items-center gap-1.5 rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold text-zinc-700">
                   <BarChart2 className="h-3.5 w-3.5 text-zinc-700" />
@@ -180,7 +202,6 @@ export default function SignupPage() {
                 </div>
               </div>
 
-              {/* Price */}
               <div className="mt-3.5">
                 <span className="text-lg sm:text-xl font-extrabold text-[#0052FE]">
                   $25
@@ -191,7 +212,7 @@ export default function SignupPage() {
               </div>
             </div>
 
-            {/* White 3D Zigzag Ribbon (Right Edge) */}
+            {/* White 3D Zigzag Ribbon */}
             <div className="absolute right-0 sm:right-2 top-32 sm:top-36 w-16 sm:w-20 z-30 pointer-events-none animate-float-reverse">
               <Image
                 src="/assets/hero/left2.png"
@@ -202,7 +223,7 @@ export default function SignupPage() {
               />
             </div>
 
-            {/* Card 3: Happy Students (Bottom Center/Right) */}
+            {/* Card 3: Happy Students */}
             <div className="absolute left-24 sm:left-32 -bottom-2 sm:bottom-0 w-[230px] sm:w-[260px] rounded-[24px] bg-[#D2FF00] p-4 shadow-xl z-25 transition hover:scale-105">
               <div className="flex items-center justify-between">
                 <div>
@@ -231,7 +252,7 @@ export default function SignupPage() {
               </div>
             </div>
 
-            {/* Lime 3D Pyramid (Bottom Left) */}
+            {/* Lime 3D Pyramid */}
             <div className="absolute -left-4 sm:-left-2 bottom-0 w-18 sm:w-22 z-30 pointer-events-none animate-float-slow -rotate-12">
               <Image
                 src="/assets/hero/right2.png"
@@ -241,7 +262,6 @@ export default function SignupPage() {
                 className="h-auto w-full object-contain filter hue-rotate-60"
               />
             </div>
-
           </div>
         </div>
 
@@ -259,8 +279,16 @@ export default function SignupPage() {
               </h2>
             </div>
 
+            {/* Error Message Alert */}
+            {errorMessage && (
+              <div className="mt-6 flex items-center gap-2 rounded-2xl bg-red-50 border border-red-200 p-3.5 text-xs text-red-700">
+                <AlertCircle className="h-4 w-4 shrink-0 text-red-600" />
+                <span>{errorMessage}</span>
+              </div>
+            )}
+
             {/* Form */}
-            <form onSubmit={(e) => e.preventDefault()} className="mt-8 space-y-4 sm:space-y-5">
+            <form onSubmit={handleEmailSignup} className="mt-6 space-y-4 sm:space-y-5">
               {/* Full Name */}
               <div>
                 <label
@@ -274,6 +302,8 @@ export default function SignupPage() {
                   name="fullName"
                   type="text"
                   required
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
                   placeholder="Jamie Davis"
                   className="w-full rounded-[14px] border border-zinc-200/90 bg-white px-4 py-3.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-500 transition"
                 />
@@ -292,6 +322,8 @@ export default function SignupPage() {
                   name="email"
                   type="email"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="designer@example.com"
                   className="w-full rounded-[14px] border border-zinc-200/90 bg-white px-4 py-3.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-500 transition"
                 />
@@ -303,13 +335,15 @@ export default function SignupPage() {
                   htmlFor="password"
                   className="block text-xs font-semibold text-zinc-700 mb-1.5"
                 >
-                  Password
+                  Password (min. 6 characters)
                 </label>
                 <input
                   id="password"
                   name="password"
                   type="password"
                   required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
                   className="w-full rounded-[14px] border border-zinc-200/90 bg-white px-4 py-3.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-500 transition"
                 />
@@ -319,15 +353,62 @@ export default function SignupPage() {
               <div className="flex justify-end pt-2">
                 <button
                   type="submit"
-                  className="rounded-full bg-[#D2FF00] px-8 py-3 sm:px-9 sm:py-3.5 text-sm font-bold text-zinc-950 shadow-sm transition-all duration-200 hover:bg-[#c2ed00] hover:scale-105 active:scale-95 text-center cursor-pointer"
+                  disabled={isSubmitting}
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D2FF00] px-8 py-3 sm:px-9 sm:py-3.5 text-sm font-bold text-zinc-950 shadow-sm transition-all duration-200 hover:bg-[#c2ed00] hover:scale-105 active:scale-95 text-center cursor-pointer disabled:opacity-70 disabled:pointer-events-none"
                 >
-                  Continue
+                  {isSubmitting && <Loader2 className="h-4 w-4 animate-spin" />}
+                  <span>{isSubmitting ? "Creating Account..." : "Continue"}</span>
                 </button>
               </div>
             </form>
 
+            {/* Social Signup Divider */}
+            <div className="relative my-7 sm:my-8">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-zinc-200/80" />
+              </div>
+              <div className="relative flex justify-center text-xs">
+                <span className="bg-white px-3 text-zinc-400 font-normal">or continue with</span>
+              </div>
+            </div>
+
+            {/* Google OAuth Signup Button */}
+            <div className="flex items-center justify-center">
+              <button
+                type="button"
+                onClick={handleGoogleSignup}
+                disabled={isGoogleLoading}
+                aria-label="Sign up with Google"
+                className="w-full flex items-center justify-center gap-3 rounded-2xl border border-zinc-200/90 bg-white py-3 px-4 text-xs sm:text-sm font-semibold text-zinc-800 transition-all hover:bg-zinc-50 hover:border-zinc-300 hover:scale-[1.02] active:scale-98 shadow-xs cursor-pointer disabled:opacity-70"
+              >
+                {isGoogleLoading ? (
+                  <Loader2 className="h-5 w-5 animate-spin text-zinc-600" />
+                ) : (
+                  <svg className="h-5 w-5" viewBox="0 0 24 24">
+                    <path
+                      fill="#4285F4"
+                      d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"
+                    />
+                    <path
+                      fill="#EA4335"
+                      d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"
+                    />
+                  </svg>
+                )}
+                <span>Sign up with Google</span>
+              </button>
+            </div>
+
             {/* Bottom Link */}
-            <div className="mt-10 sm:mt-12 text-center text-xs text-zinc-500">
+            <div className="mt-8 sm:mt-10 text-center text-xs text-zinc-500">
               Already have an account?{" "}
               <Link
                 href="/login"
