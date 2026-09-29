@@ -22,6 +22,40 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "17 Lessons (2 hours 16 mins)",
+    progressPercentage: "65%",
+    modulesOverview: "Immerse yourself in the course content as we break down each module into comprehensive lessons, providing practical insights and hands-on experiences.",
+    lessonContentText: "Engage with each lesson through captivating video content, detailed textual explanations, and interactive elements. Download resources, complete assignments, and test your understanding with quizzes.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: Introduction to Figma & Workspace Setup",
+        description: "Lay the groundwork with lessons like 'Navigating Figma Canvas' and 'Keyboard Shortcuts.' Dive into interface essentials and frame management."
+      },
+      {
+        title: "Module 2: Shapes, Vectors & Boolean Operations",
+        description: "Master vector networks, pen tool precision, and customized iconography. Elevate your visual design foundations."
+      },
+      {
+        title: "Module 3: Auto Layout 5.0 & Responsive Constraints",
+        description: "Understand 'Dynamic Padding and Resizing' and delve into 'Responsive Mobile & Desktop Grids.' Craft adaptive user interfaces with confidence."
+      },
+      {
+        title: "Module 4: Component Variants & Design Tokens",
+        description: "Build robust component architectures with interactive variants, property bindings, and centralized typography tokens."
+      },
+      {
+        title: "Module 5: Interactive Prototyping & Micro-Animations",
+        description: "Engage your audience with lessons like 'Smart Animate Transitions' and 'Interactive Component Overlays.' Master the art of realistic product flows."
+      },
+      {
+        title: "Module 6: Design System Architecture & Developer Handoff",
+        description: "Perfect your handoff skills with 'Design Specs Annotation' and embrace collaboration with 'Team Component Libraries.' Showcase your work with confidence."
+      },
+      {
+        title: "Module 7: Capstone Project & Portfolio Case Study",
+        description: "Adapt your digital designs into complete responsive case studies optimized for Behance, Dribbble, and client pitches."
+      }
+    ],
     description: [
       "Embark on an exciting creative journey into user interface and user experience design with Figma. This comprehensive course takes you step-by-step from the very basics of the Figma interface to creating industry-standard interactive prototypes and responsive components.",
       "You will explore core design concepts including auto layout, design tokens, typography scale, component variants, and interactive prototyping that will empower you to build real-world digital products.",
@@ -73,6 +107,36 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "112 Lessons (24 hours)",
+    progressPercentage: "55%",
+    modulesOverview: "Immerse yourself in the course content as we break down each module into comprehensive lessons, providing practical insights and hands-on experiences.",
+    lessonContentText: "Engage with each lesson through captivating video content, detailed textual explanations, and interactive elements. Download resources, complete assignments, and test your understanding with quizzes.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: Introduction to Digital Assets",
+        description: "Lay the groundwork with lessons like 'Understanding Digital Elements' and 'Navigating Design Software Tools.' Dive into the essentials of digital asset creation."
+      },
+      {
+        title: "Module 2: Design Principles for Impact",
+        description: "Master the principles that drive impactful designs with lessons such as 'Color Theory in Digital Design' and 'Typography Essentials.' Elevate your visual communication skills."
+      },
+      {
+        title: "Module 4: User-Centric Design Strategies",
+        description: "Understand 'Design Thinking in Digital Creation' and delve into 'User Experience (UX) Essentials.' Craft digital assets with a focus on user-centric design."
+      },
+      {
+        title: "Module 5: Interactive Media and Engagement",
+        description: "Engage your audience with lessons like 'Creating Interactive Presentations' and 'Integrating Multimedia Elements.' Master the art of creating immersive digital experiences."
+      },
+      {
+        title: "Module 6: Project Showcase and Critique",
+        description: "Perfect your presentation skills with 'Effective Presentation Techniques' and embrace collaboration with 'Peer Critique and Collaboration.' Showcase your work with confidence."
+      },
+      {
+        title: "Module 7: Optimizing Digital Assets for Various Platforms",
+        description: "Adapt your digital creations for 'Mobile Platforms' and optimize for 'Social Media.' Ensure widespread accessibility and engagement across diverse digital landscapes."
+      }
+    ],
     description: [
       "Embark on an enlightening exploration into the world of digital creation with our comprehensive course, \"Build Digital Assets: A Comprehensive Guide.\" This transformative learning experience invites you to delve deep into the intricacies of crafting impactful digital content. From laying the groundwork with foundational concepts to mastering advanced techniques, this guide is meticulously curated to empower you with the skills essential for navigating the dynamic landscape of digital asset creation.",
       "In the initial modules, you'll establish a solid foundation by immersing yourself in the foundational concepts that form the backbone of digital asset creation. Understand the fundamental elements that constitute compelling digital content and gain proficiency in leveraging these elements to communicate effectively in the digital realm.",
@@ -123,6 +187,36 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "48 Lessons (14 hours)",
+    progressPercentage: "42%",
+    modulesOverview: "Immerse yourself in big data architecture as we break down end-to-end analytics pipelines, predictive modeling, and executive dashboard design.",
+    lessonContentText: "Engage with real-world enterprise datasets, execute SQL optimizations, write Python ETL scripts, and create interactive BI presentations.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: Big Data Infrastructure & Ecosystem Overview",
+        description: "Lay the groundwork with lessons on distributed computing, modern cloud data lakes, and high-throughput ingestion architectures."
+      },
+      {
+        title: "Module 2: Scalable Data Pipelines & ETL Processing",
+        description: "Master data cleaning, schema validation, and automated ETL workflows using Apache Spark and modern SQL engines."
+      },
+      {
+        title: "Module 3: Statistical Modeling & Predictive Analytics",
+        description: "Delve into regression modeling, clustering, and predictive algorithms to discover hidden trends in large datasets."
+      },
+      {
+        title: "Module 4: Interactive Dashboards & BI Visualizations",
+        description: "Design executive dashboards in PowerBI and Tableau that translate complex numbers into persuasive visual narratives."
+      },
+      {
+        title: "Module 5: Real-Time Stream Processing & Telemetry",
+        description: "Handle high-velocity event streams with Kafka and stream analytics engines for immediate business intelligence."
+      },
+      {
+        title: "Module 6: Enterprise Analytics Capstone Showcase",
+        description: "Deliver an end-to-end data analytics system from raw telemetry extraction to board-level presentation."
+      }
+    ],
     description: [
       "Discover the immense power of modern big data analytics and statistical engineering. This in-depth course teaches you how to collect, clean, model, and visualize large datasets to unlock actionable business intelligence.",
       "Learn how industry leaders utilize data pipelines, SQL querying, Python analytics libraries, and real-time dashboards to forecast trends and optimize complex systems.",
@@ -173,6 +267,32 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "32 Lessons (8 hours)",
+    progressPercentage: "70%",
+    modulesOverview: "Immerse yourself in actionable cognitive systems designed to double output while eliminating burnout and preserving mental clarity.",
+    lessonContentText: "Engage with guided time audits, calendar blocking templates, focus playlists, and science-backed recovery routines.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: Neuroscience of Focus & Dopamine Management",
+        description: "Understand the biological basis of deep work, attention spans, and overcoming digital dopamine friction."
+      },
+      {
+        title: "Module 2: Time Blocking & Calendar Architecture",
+        description: "Construct thematic work blocks, eliminate multitasking leaks, and establish non-negotiable creative flow windows."
+      },
+      {
+        title: "Module 3: Digital Minimalism & Distraction Shields",
+        description: "Audit incoming communication notifications, filter noise, and create a distraction-free digital environment."
+      },
+      {
+        title: "Module 4: Energy Management vs Time Management",
+        description: "Sync demanding mental tasks with circadian peak hours, nutrition strategies, and active physical recovery."
+      },
+      {
+        title: "Module 5: Building Your Personal Productivity Operating System",
+        description: "Design a customized daily workflow dashboard in Notion or Obsidian to sustain high output year-round."
+      }
+    ],
     description: [
       "Achieving peak productivity without burnout is an essential skill in today's fast-paced digital world. This course provides actionable systems and cognitive frameworks to master your workflow, eliminate distractions, and maintain sustainable momentum.",
       "Learn practical time blocking, deep work habits, task prioritization models, and wellness routines that maximize both output and life satisfaction."
@@ -222,6 +342,32 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "40 Lessons (11 hours)",
+    progressPercentage: "60%",
+    modulesOverview: "Immerse yourself in personal wealth engineering, asset allocation, and passive income engines tailored for modern creators.",
+    lessonContentText: "Access downloadable investment calculators, tax strategy templates, and portfolio rebalancing spreadsheets.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: Personal Cash Flow Architecture",
+        description: "Set up automated savings buckets, optimize monthly operating expenses, and construct robust emergency reserves."
+      },
+      {
+        title: "Module 2: Asset Allocation & Compounding Growth",
+        description: "Master global index fund investing, dollar-cost averaging, and tax-efficient retirement account structures."
+      },
+      {
+        title: "Module 3: Debt Elimination & Credit Optimization",
+        description: "Apply mathematical avalanche strategies to wipe out high-interest liabilities and build high business credit scores."
+      },
+      {
+        title: "Module 4: Real Estate & Alternative Cash-Flow Assets",
+        description: "Understand REITs, rental yield underwriting, and risk-adjusted multi-asset diversification."
+      },
+      {
+        title: "Module 5: 10-Year Financial Independence Blueprint",
+        description: "Calculate your exact financial independence number and construct sustainable automated dividend streams."
+      }
+    ],
     description: [
       "Take complete control of your financial destiny with proven wealth creation, cash flow management, and investment strategies tailored for creators and modern professionals.",
       "Understand asset allocation, tax efficiency, inflation hedging, and building diversified passive income streams."
@@ -271,6 +417,32 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "56 Lessons (16 hours)",
+    progressPercentage: "48%",
+    modulesOverview: "Immerse yourself in the proven startup methodology from customer discovery interviews to venture capital term sheet negotiations.",
+    lessonContentText: "Download investor pitch deck templates, cap table spreadsheets, and customer interview script guides.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: Idea Validation & Customer Discovery",
+        description: "Conduct high-impact user interviews, test problem-solution hypotheses, and quantify total addressable market size."
+      },
+      {
+        title: "Module 2: Lean MVP Prototyping & No-Code Stack",
+        description: "Launch a working MVP in under two weeks without complex backend engineering to test willingness to pay."
+      },
+      {
+        title: "Module 3: Achieving Product-Market Fit & Retention",
+        description: "Analyze user retention cohorts, survey feedback loops, and iterate product features toward sticky adoption."
+      },
+      {
+        title: "Module 4: Go-to-Market & Viral Customer Acquisition",
+        description: "Build scalable acquisition flywheels, SEO growth loops, and execute high-converting launch campaigns."
+      },
+      {
+        title: "Module 5: Pitch Decks & Venture Capital Fundraising",
+        description: "Structure compelling financial projections, craft winning pitch slides, and close angel/VC investment rounds."
+      }
+    ],
     description: [
       "Turn your innovative idea into a thriving, scalable business. This comprehensive startup masterclass guides you through validation, product-market fit, fundraising, team assembly, and go-to-market execution.",
       "Learn how to build Minimum Viable Products rapidly, attract early adopters, and execute high-growth marketing strategies."
@@ -320,6 +492,32 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "24 Lessons (5 hours 30 mins)",
+    progressPercentage: "50%",
+    modulesOverview: "Immerse yourself in modern digital audio workstations, sound synthesis, MIDI sequencing, and commercial mixing craft.",
+    lessonContentText: "Download exclusive royalty-free drum sample packs, synth presets, and full Ableton/FL Studio project files.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: DAW Setup & Sound Library Structuring",
+        description: "Configure audio interfaces, sample rates, and build a rapid beatmaking template in Ableton Live / FL Studio."
+      },
+      {
+        title: "Module 2: Rhythm Design & Drum Layering",
+        description: "Program syncopated groove patterns, layer acoustic and electronic punch kicks, and apply swing timing."
+      },
+      {
+        title: "Module 3: Melodic Hooks & Wavetable Sound Design",
+        description: "Design soaring lead sounds, warm analog basslines, and emotive chord progressions with software synths."
+      },
+      {
+        title: "Module 4: Vocal Tracking & Spatial FX",
+        description: "Pitch-correct vocal recordings, set up wide stereo ping-pong delays, and create cavernous reverb spaces."
+      },
+      {
+        title: "Module 5: Dynamic Mixing & Streaming Mastering",
+        description: "Balance frequencies with surgical EQ, sidechain bass, and master final tracks to -14 LUFS for Spotify."
+      }
+    ],
     description: [
       "Dive into music creation with practical hands-on DAW workflows, sound synthesis, MIDI sequencing, and modern beat craft.",
       "Learn essential EQ balancing, sidechain compression, vocal mixing, and final stereo bus mastering techniques."
@@ -367,6 +565,32 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "28 Lessons (6 hours 45 mins)",
+    progressPercentage: "62%",
+    modulesOverview: "Immerse yourself in digital brush mechanics, anatomical sketching, luminous color lighting, and digital concept painting.",
+    lessonContentText: "Download 30+ custom Procreate brushes, color swatch palettes, and layered artwork PSD/Procreate source files.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: Canvas Calibration & Custom Brush Engines",
+        description: "Master pressure sensitivity curves, streamline stabilization, and craft customized organic painting brushes."
+      },
+      {
+        title: "Module 2: Form, Value & Anatomical Foundations",
+        description: "Sketch dynamic human poses, construct expressive facial planes, and render smooth three-dimensional forms."
+      },
+      {
+        title: "Module 3: Color Temperature & Cinematic Lighting",
+        description: "Explore color mood theory, direct vs ambient bounce lighting, and paint glowing atmospheric highlights."
+      },
+      {
+        title: "Module 4: Layer Blending Modes & Special FX",
+        description: "Utilize overlay, color dodge, and multiply layers to create magical luminescence and textural depth."
+      },
+      {
+        title: "Module 5: Concept Art Showcase & Commercial Export",
+        description: "Finish an industry-standard fantasy illustration piece prepared for print licensing and digital portfolios."
+      }
+    ],
     description: [
       "Unleash your artistic imagination with digital illustration techniques. Master sketching, shading, dynamic perspective, and luminous color blending.",
       "Follow step-by-step painting demonstrations to create stunning fantasy landscapes, portraits, and expressive character concepts."
@@ -414,6 +638,32 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "36 Lessons (9 hours 15 mins)",
+    progressPercentage: "55%",
+    modulesOverview: "Immerse yourself in conversion rate optimization, viral referral loops, and automated omnichannel growth engines.",
+    lessonContentText: "Engage with high-converting landing page wireframes, A/B test statistical calculators, and cold email frameworks.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: The Modern Growth Funnel Anatomy",
+        description: "Deconstruct acquisition, activation, retention, revenue, and referral flywheels for high-growth tech brands."
+      },
+      {
+        title: "Module 2: High-Converting Landing Page Frameworks",
+        description: "Write compelling value propositions, position high-trust social proof, and eliminate checkout drop-offs."
+      },
+      {
+        title: "Module 3: A/B Testing & Conversion Rate Optimization",
+        description: "Design rigorous multivariate experiments to double signups while cutting customer acquisition costs in half."
+      },
+      {
+        title: "Module 4: Product-Led Growth & Viral Loops",
+        description: "Incentivize organic word-of-mouth sharing and build viral distribution mechanics directly into your product."
+      },
+      {
+        title: "Module 5: Omnichannel Lifecycle Automation",
+        description: "Set up automated behavioral email sequences and push notifications that maximize lifetime customer value."
+      }
+    ],
     description: [
       "Master the science and psychology behind viral marketing campaigns, conversion rate optimization (CRO), and omni-channel acquisition funnels.",
       "Learn how modern growth teams test rapid experiments, reduce CAC (Customer Acquisition Cost), and maximize lifetime customer value (LTV)."
@@ -461,6 +711,32 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "44 Lessons (13 hours)",
+    progressPercentage: "55%",
+    modulesOverview: "Immerse yourself in Blender 4.0 geometry nodes, procedural materials, rigid body physics, and GPU rendering.",
+    lessonContentText: "Download 3D project blend files, procedural shader nodes, HDR environment lighting maps, and render presets.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: Blender 4.0 Interface & Modeling Basics",
+        description: "Navigate 3D viewports, master modifier stacks, and create clean hard-surface commercial product models."
+      },
+      {
+        title: "Module 2: Procedural Shading & PBR Textures",
+        description: "Construct glass, metallic, and organic surface materials using node networks and roughness maps."
+      },
+      {
+        title: "Module 3: Keyframing & Animation Curves",
+        description: "Animate camera sweeps, object dynamics, and refine motion timing in the Graph Editor."
+      },
+      {
+        title: "Module 4: Geometry Nodes for Generative Visuals",
+        description: "Build complex procedural particle arrays, twisting wireframes, and parametric motion effects."
+      },
+      {
+        title: "Module 5: Cycles GPU Rendering & Color Post-Processing",
+        description: "Optimize raytracing samples, denoise render passes, and composite final film-grade visual sequences."
+      }
+    ],
     description: [
       "Bring 3D worlds to life using Blender's modern animation and geometry node pipelines. Design dynamic broadcast motion graphics, abstract loops, and photorealistic product commercials.",
       "Explore lighting, texturing with PBR shaders, rigid body dynamics, fluid simulations, and GPU render optimization in Cycles."
@@ -508,6 +784,32 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "30 Lessons (7 hours 20 mins)",
+    progressPercentage: "55%",
+    modulesOverview: "Immerse yourself in the creator economy playbook: viral video hook formulas, algorithmic timing, and sponsorship pitching.",
+    lessonContentText: "Download creator media kit templates, rate calculation sheets, and 100+ viral short-form script blueprints.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: Defining Your Unique Brand Narrative",
+        description: "Identify high-engagement niches, craft personal founder stories, and establish visual aesthetic rules."
+      },
+      {
+        title: "Module 2: Short-Form Video Scripting & Hook Formulas",
+        description: "Write high-retention 3-second hooks, fast-paced edits, and compelling calls-to-action for Reels and TikTok."
+      },
+      {
+        title: "Module 3: Algorithm Hacking & Growth Timing",
+        description: "Decode engagement signals, trending sounds, posting cadences, and cross-platform distribution."
+      },
+      {
+        title: "Module 4: Brand Sponsorships & Pitching Media Kits",
+        description: "Create high-value media kits, negotiate creator brand deals, and set profitable sponsorship pricing."
+      },
+      {
+        title: "Module 5: Digital Product Launch & Community Building",
+        description: "Launch profitable digital downloads, private discord communities, and recurring subscription tiers."
+      }
+    ],
     description: [
       "Learn the exact frameworks used by top digital creators to build recognizable personal brands, craft viral short-form video hooks, and monetize with sponsorship deals and digital product launches.",
       "Understand platform algorithms, content scheduling engines, audience psychology, and community building."
@@ -555,6 +857,32 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "22 Lessons (5 hours 45 mins)",
+    progressPercentage: "75%",
+    modulesOverview: "Immerse yourself in classical French culinary foundations, knife precision, sauce reductions, and modern gourmet plating.",
+    lessonContentText: "Download detailed recipe cards, temperature charts, wine pairing guides, and ingredient substitution matrices.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: Kitchen Mise en Place & Knife Mastery",
+        description: "Hone chef knife techniques, precision julienne cuts, and streamline high-efficiency kitchen prep."
+      },
+      {
+        title: "Module 2: The Five French Mother Sauces",
+        description: "Cook velvety bechamel, rich velouté, classic espagnole, hollandaise, and modern herb reductions."
+      },
+      {
+        title: "Module 3: Protein Searing & Sous-Vide Precision",
+        description: "Achieve edge-to-edge medium rare steak crusts, crispy skin salmon, and juicy tender poultry."
+      },
+      {
+        title: "Module 4: Artisanal Handmade Pasta & Doughs",
+        description: "Mix, knead, roll, and cut silky egg pasta ribbons, filled ravioli, and crusty focaccia bread."
+      },
+      {
+        title: "Module 5: Michelin-Style Plating & Presentation",
+        description: "Apply negative space, sauce swooshes, vibrant micro-greens, and textural contrast to every dish."
+      }
+    ],
     description: [
       "Transform everyday cooking into restaurant-grade culinary art. Master fundamental French and Asian cooking techniques, sauce emulsions, knife precision, and multi-course menu timing.",
       "Discover the science of seasoning balance: salt, acid, fat, and heat harmony."
@@ -583,7 +911,7 @@ export const coursesData = [
     id: 13,
     slug: "fullstack-react-nextjs-mastery",
     title: "Full-Stack Web Development with React & Next.js",
-    subtitle: "Build High-Performance Production Web Apps with TypeScript & Tailwind",
+    subtitle: "Build High-Performance Production Web Apps with Next.js & Tailwind",
     category: "UI/UX Design",
     categories: ["UI/UX Design", "Featured", "Design"],
     instructor: "purepearl studio",
@@ -602,17 +930,43 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "60 Lessons (18 hours)",
+    progressPercentage: "68%",
+    modulesOverview: "Immerse yourself in Next.js App Router architecture, Server Components, PostgreSQL data modeling, and Stripe payment integration.",
+    lessonContentText: "Access full production GitHub starter repositories, database migration scripts, and edge deployment configuration templates.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: Next.js App Router & Server Component Architecture",
+        description: "Master nested layout hierarchies, streaming server rendering, Suspense boundaries, and zero-bundle server logic."
+      },
+      {
+        title: "Module 2: Modern Responsive UI with Tailwind CSS",
+        description: "Design sleek dark modes, glassmorphism containers, custom animations, and accessible component libraries."
+      },
+      {
+        title: "Module 3: Database Modeling with Prisma & PostgreSQL",
+        description: "Architect relational database schemas, optimize indexed queries, and manage seamless production migrations."
+      },
+      {
+        title: "Module 4: Authentication & Secure Session Management",
+        description: "Implement OAuth social logins, HTTP-only cookie sessions, CSRF protection, and role-based route middleware."
+      },
+      {
+        title: "Module 5: Stripe Subscriptions, Webhooks & Global Edge Deploy",
+        description: "Process recurring payments, handle secure webhook verification, and deploy to worldwide edge content networks."
+      }
+    ],
     description: [
-      "Master modern web engineering with Next.js App Router, Server Components, TypeScript, Tailwind CSS, PostgreSQL, and serverless deployment.",
+      "Master modern web engineering with Next.js App Router, Server Components, Tailwind CSS, PostgreSQL, and serverless deployment.",
       "Construct complete scalable applications featuring authentication, payments, database transactions, and real-time state sync."
     ],
     keyPoints: [
       "Next.js App Router Architecture & React 19 Features",
-      "TypeScript Type Safety and Schema Validation",
       "Tailwind CSS Layouts and Component Design Systems",
       "Database Modeling with Prisma and PostgreSQL",
       "Stripe Payment Processing & Webhooks",
-      "Server-Side Rendering, Caching, and SEO Optimization"
+      "Server-Side Rendering, Caching, and SEO Optimization",
+      "Production Cloud Deployment & Monitoring"
     ],
     lessonsList: [
       { id: "01", title: "App Router & Server Component Foundations", duration: "20 mins" },
@@ -649,6 +1003,32 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "34 Lessons (8 hours 30 mins)",
+    progressPercentage: "55%",
+    modulesOverview: "Immerse yourself in corporate brand strategy, emotional positioning, visual archetype frameworks, and pitch deck presentations.",
+    lessonContentText: "Download 50-page brand guidelines templates, client discovery question decks, and presentation slide decks.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: Brand Archetypes & Emotional Positioning",
+        description: "Determine core corporate personas, emotional resonance triggers, and distinctive market positioning."
+      },
+      {
+        title: "Module 2: Visual Identity Systems & Typography",
+        description: "Pair typography scales, establish balanced color palettes, and create iconic logo marks."
+      },
+      {
+        title: "Module 3: Brand Voice & Copywriting Matrix",
+        description: "Draft comprehensive tone guidelines, tagline slogans, and corporate communication standards."
+      },
+      {
+        title: "Module 4: Touchpoints, Packaging & Physical Media",
+        description: "Apply brand systems to tangible assets, packaging boxes, merchandise, and exhibition booths."
+      },
+      {
+        title: "Module 5: Brand Guidelines Book & Client Presentations",
+        description: "Compile 50-page brand guidelines manuals and deliver winning presentations to executive stakeholders."
+      }
+    ],
     description: [
       "Learn how premium brands command loyalty and prestige. Develop holistic brand identity systems including voice, typography, color symbolism, and memorable brand stories.",
       "Create pitch decks that win high-value corporate branding contracts."
@@ -696,6 +1076,32 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "30 Lessons (7 hours)",
+    progressPercentage: "55%",
+    modulesOverview: "Immerse yourself in studio lighting modifiers, model direction, RAW color grading, and high-end beauty retouching.",
+    lessonContentText: "Download Lightroom cinematic portrait presets, Photoshop frequency separation actions, and studio lighting diagrams.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: Camera Optics & Manual Exposure Control",
+        description: "Master ISO, shutter speed, aperture depth of field, and prime lens selection for emotive portraits."
+      },
+      {
+        title: "Module 2: Studio Strobe & Continuous Lighting Setup",
+        description: "Position key lights, rim lights, and softbox diffusers to sculpt three-dimensional facial features."
+      },
+      {
+        title: "Module 3: Natural Light & Golden Hour Modifiers",
+        description: "Harness sun angles, bounce reflectors, and scrims for stunning on-location editorial shoots."
+      },
+      {
+        title: "Module 4: Editorial Model Direction & Posing",
+        description: "Direct professional models with organic movement cues, confident body language, and candid expressions."
+      },
+      {
+        title: "Module 5: Color Grading & Frequency Separation Retouching",
+        description: "Create film stock color palettes in Lightroom and perform non-destructive skin retouching in Photoshop."
+      }
+    ],
     description: [
       "Capture emotive, film-like portraiture with natural and strobe lighting. Master camera settings, focal length selection, model posing, and Lightroom/Photoshop grading.",
       "Build a breathtaking fashion and portrait photography portfolio."
@@ -743,6 +1149,32 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "28 Lessons (6 hours 30 mins)",
+    progressPercentage: "55%",
+    modulesOverview: "Immerse yourself in classic frame-by-frame animation, squash and stretch physics, character model sheets, and storyboarding.",
+    lessonContentText: "Download animation timeline project files, character model sheets, and storyboard framing templates.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: 12 Principles of Animation in Digital Media",
+        description: "Apply squash & stretch, anticipation, staging, and follow-through to dynamic character motion."
+      },
+      {
+        title: "Module 2: Walk Cycles, Runs & Weight Distribution",
+        description: "Animate fluid 8-frame walk and run cycles with natural center-of-gravity shifts and momentum."
+      },
+      {
+        title: "Module 3: Facial Acting, Expressions & Dialogue Lip Sync",
+        description: "Map phonemes to mouth shapes, animate expressive eye glances, and convey nuanced emotion."
+      },
+      {
+        title: "Module 4: Dynamic Storyboard Staging & Camera Angles",
+        description: "Draw storyboard frames with cinematic composition, depth, and dramatic perspective cuts."
+      },
+      {
+        title: "Module 5: Animatics Assembly & Audio Synchronization",
+        description: "Combine storyboard panels with voice dialogue, foley sound effects, and scratch music tracks."
+      }
+    ],
     description: [
       "Learn the core fundamentals of character motion, anticipation, squash & stretch, and storytelling through expressive keyframe animation.",
       "Design storyboards and animatics for animated short films and gaming cutscenes."
@@ -790,6 +1222,32 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "32 Lessons (8 hours)",
+    progressPercentage: "55%",
+    modulesOverview: "Immerse yourself in acoustic treatment physics, microphone polar responses, analog preamp warmth, and multi-track phasing.",
+    lessonContentText: "Download room frequency measurement tools, microphone shootout recordings, and vocal processing channel strips.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: Studio Room Acoustics & Calibration",
+        description: "Install bass traps, acoustic diffusers, and eliminate room flutter echoes for flat monitor response."
+      },
+      {
+        title: "Module 2: Microphone Types & Polar Pattern Selection",
+        description: "Select condenser, dynamic, and ribbon microphones for clean acoustic guitar and vocal tracking."
+      },
+      {
+        title: "Module 3: Analog Preamp Gain Staging & Saturation",
+        description: "Drive hardware preamps for warm harmonic saturation while maintaining headroom and low noise floor."
+      },
+      {
+        title: "Module 4: Vocal Chain Compression & Surgical EQ",
+        description: "Chain opto and VCA compressors, tame harsh sibilance with de-essers, and add top-end air."
+      },
+      {
+        title: "Module 5: Outboard Gear Routing & Hardware Summing",
+        description: "Route audio through analog bus compressors, tape emulators, and summing mixers for rich depth."
+      }
+    ],
     description: [
       "Master the technical acoustics of recording spaces, microphone polar patterns, analog preamps, and pristine vocal capture.",
       "Treat your room acoustics effectively and eliminate unwanted reflections and standing waves."
@@ -837,6 +1295,32 @@ export const coursesData = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     totalLessonsInfo: "26 Lessons (6 hours)",
+    progressPercentage: "80%",
+    modulesOverview: "Immerse yourself in wild sourdough fermentation, butter lamination, French macarons, and gourmet pastry glazing.",
+    lessonContentText: "Download hydration calculation spreadsheets, baking schedules, and temperature-controlled fermentation guides.",
+    progressTrackingText: "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
+    modules: [
+      {
+        title: "Module 1: Wild Sourdough Starter & Fermentation Chemistry",
+        description: "Cultivate active wild yeast starters, understand hydration ratios, and control autolyse times."
+      },
+      {
+        title: "Module 2: Croissant Dough Lamination & Butter Blocks",
+        description: "Create perfect 27-layer butter laminations for flaky, honeycomb-interior French croissants."
+      },
+      {
+        title: "Module 3: Delicate French Macarons Italian Method",
+        description: "Whip glossy Italian meringue, fold almond flour macaronage, and bake feet-perfect shells."
+      },
+      {
+        title: "Module 4: Silky Ganaches, Pralines & Fruit Curds",
+        description: "Emulsify chocolate ganaches, make crunchy hazelnut praline, and cook tart passion fruit curds."
+      },
+      {
+        title: "Module 5: Tart Construction & Gourmet Pastry Glazing",
+        description: "Blind bake crisp pate sablee tart shells, pipe mousse domes, and pour mirror glazes."
+      }
+    ],
     description: [
       "Discover the precise chemistry and artistry of French patisserie and wild yeast baking. Create flaky laminated croissants, crusty sourdough loaves, and flawless macarons.",
       "Learn temperature control, gluten development, and delicate pastry assembly."
@@ -869,11 +1353,9 @@ export function getCourseById(id) {
   const numericId = typeof id === "string" ? parseInt(id, 10) : id;
   
   if (!isNaN(numericId) && numericId > 0) {
-    // Exact match first
     const exact = coursesData.find((c) => c.id === numericId);
     if (exact) return exact;
 
-    // Normalizing index for modulo if id > coursesData.length
     const normalizedId = ((numericId - 1) % coursesData.length) + 1;
     const course = coursesData.find((c) => c.id === normalizedId);
     if (course) return course;

@@ -116,7 +116,7 @@ export default function CourseDetailsView({ course }) {
             <div className="lg:col-span-8">
               {/* Navigation Tabs */}
               <div className="flex items-center gap-2.5 sm:gap-3">
-                {["About", "Lessons", "Reviews"].map((tab) => {
+                {["About", "Lesson", "Reviews"].map((tab) => {
                   const isActive = activeTab === tab;
                   return (
                     <button
@@ -135,59 +135,248 @@ export default function CourseDetailsView({ course }) {
                 })}
               </div>
 
-              {/* Description Content */}
-              <div className="mt-8 sm:mt-10">
-                <h2 className="text-lg sm:text-xl font-bold tracking-tight text-zinc-950">
-                  Description
-                </h2>
+              {/* TAB 1: About */}
+              {activeTab === "About" && (
+                <div className="mt-8 sm:mt-10 animate-in fade-in duration-300">
+                  {/* Description Content */}
+                  <div>
+                    <h2 className="text-lg sm:text-xl font-bold tracking-tight text-zinc-950">
+                      Description
+                    </h2>
 
-                <div className="mt-4 space-y-4 text-xs sm:text-[13.5px] leading-relaxed text-zinc-600 font-normal">
-                  {currentCourse.description.map((paragraph, idx) => (
-                    <p key={idx}>{paragraph}</p>
-                  ))}
-                </div>
-              </div>
-
-              {/* Sneak Peak Gallery */}
-              <div className="mt-10 sm:mt-12">
-                <h3 className="text-base sm:text-lg font-bold tracking-tight text-zinc-950">
-                  Sneak Peak
-                </h3>
-
-                <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-                  {currentCourse.sneakPeakImages.map((src, i) => (
-                    <div
-                      key={i}
-                      className="relative aspect-[4/3] w-full overflow-hidden rounded-[18px] sm:rounded-[20px] bg-zinc-100 border border-zinc-200/80 shadow-xs group"
-                    >
-                      <Image
-                        src={src}
-                        alt={`Sneak Peak ${i + 1}`}
-                        fill
-                        className="object-cover transition duration-300 group-hover:scale-105"
-                      />
+                    <div className="mt-4 space-y-4 text-xs sm:text-[13.5px] leading-relaxed text-zinc-600 font-normal">
+                      {currentCourse.description.map((paragraph, idx) => (
+                        <p key={idx}>{paragraph}</p>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </div>
+                  </div>
 
-              {/* Key Points Checklist */}
-              <div className="mt-10 sm:mt-12">
-                <h3 className="text-base sm:text-lg font-bold tracking-tight text-zinc-950">
-                  Key Points
-                </h3>
+                  {/* Sneak Peak Gallery */}
+                  <div className="mt-10 sm:mt-12">
+                    <h3 className="text-base sm:text-lg font-bold tracking-tight text-zinc-950">
+                      Sneak Peak
+                    </h3>
 
-                <div className="mt-4 space-y-3.5">
-                  {currentCourse.keyPoints.map((point, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-[#0052FE] shrink-0 fill-[#0052FE]/10" />
-                      <span className="text-xs sm:text-sm font-medium text-zinc-800">
-                        {point}
-                      </span>
+                    <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                      {currentCourse.sneakPeakImages.map((src, i) => (
+                        <div
+                          key={i}
+                          className="relative aspect-[4/3] w-full overflow-hidden rounded-[18px] sm:rounded-[20px] bg-zinc-100 border border-zinc-200/80 shadow-xs group"
+                        >
+                          <Image
+                            src={src}
+                            alt={`Sneak Peak ${i + 1}`}
+                            fill
+                            className="object-cover transition duration-300 group-hover:scale-105"
+                          />
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
+
+                  {/* Key Points Checklist */}
+                  <div className="mt-10 sm:mt-12">
+                    <h3 className="text-base sm:text-lg font-bold tracking-tight text-zinc-950">
+                      Key Points
+                    </h3>
+
+                    <div className="mt-4 space-y-3.5">
+                      {currentCourse.keyPoints.map((point, index) => (
+                        <div key={index} className="flex items-center gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-[#0052FE] shrink-0 fill-[#0052FE]/10" />
+                          <span className="text-xs sm:text-sm font-medium text-zinc-800">
+                            {point}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
+              )}
+
+              {/* TAB 2: Lesson */}
+              {activeTab === "Lesson" && (
+                <div className="mt-8 sm:mt-10 space-y-10 sm:space-y-12 animate-in fade-in duration-300">
+                  {/* 1. Explore the Modules */}
+                  <div>
+                    <h2 className="text-lg sm:text-xl font-bold tracking-tight text-zinc-950">
+                      Explore the Modules
+                    </h2>
+                    <p className="mt-3 text-xs sm:text-[13.5px] leading-relaxed text-zinc-600 font-normal max-w-3xl">
+                      {currentCourse.modulesOverview ||
+                        "Immerse yourself in the course content as we break down each module into comprehensive lessons, providing practical insights and hands-on experiences."}
+                    </p>
+                  </div>
+
+                  {/* 2. Lesson List */}
+                  <div>
+                    <h3 className="text-base sm:text-lg font-bold tracking-tight text-zinc-950">
+                      Lesson List
+                    </h3>
+
+                    <div className="mt-5 space-y-5 sm:space-y-6">
+                      {currentCourse.modules?.map((mod, idx) => (
+                        <div key={idx} className="flex items-start gap-3.5 sm:gap-4.5 group">
+                          {/* Neon Green Video Icon Box */}
+                          <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-[#D2FF00] shadow-xs transition-transform duration-300 group-hover:scale-105">
+                            <Video className="h-5 w-5 sm:h-6 sm:w-6 text-zinc-950 stroke-[2]" />
+                          </div>
+                          
+                          {/* Title & Description */}
+                          <div className="flex-1 pt-0.5">
+                            <h4 className="text-xs sm:text-sm font-bold text-zinc-950 leading-snug">
+                              {mod.title}
+                            </h4>
+                            <p className="mt-1 text-xs sm:text-[13px] leading-relaxed text-zinc-600 font-normal">
+                              {mod.description}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* 3. Lesson Content */}
+                  <div>
+                    <h3 className="text-base sm:text-lg font-bold tracking-tight text-zinc-950">
+                      Lesson Content
+                    </h3>
+                    <p className="mt-3 text-xs sm:text-[13.5px] leading-relaxed text-zinc-600 font-normal max-w-3xl">
+                      {currentCourse.lessonContentText ||
+                        "Engage with each lesson through captivating video content, detailed textual explanations, and interactive elements. Download resources, complete assignments, and test your understanding with quizzes."}
+                    </p>
+                  </div>
+
+                  {/* 4. Lesson Progress Tracking */}
+                  <div>
+                    <h3 className="text-base sm:text-lg font-bold tracking-tight text-zinc-950">
+                      Lesson Progress Tracking
+                    </h3>
+                    <p className="mt-3 text-xs sm:text-[13.5px] leading-relaxed text-zinc-600 font-normal max-w-3xl">
+                      {currentCourse.progressTrackingText ||
+                        "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey."}
+                    </p>
+
+                    {/* Progress Card */}
+                    <div className="mt-5 rounded-2xl border border-zinc-200/90 bg-white p-5 sm:p-6 shadow-xs max-w-2xl">
+                      <p className="text-xs font-semibold text-zinc-500">
+                        Learning Progress
+                      </p>
+                      <div className="mt-1 text-2xl sm:text-3xl font-black tracking-tight text-zinc-950">
+                        {currentCourse.progressPercentage || "55%"}
+                      </div>
+                      <div className="mt-3.5 h-2.5 w-full rounded-full bg-zinc-100 overflow-hidden border border-zinc-200/50">
+                        <div
+                          className="h-full bg-[#D2FF00] rounded-full transition-all duration-700 ease-out"
+                          style={{ width: currentCourse.progressPercentage || "55%" }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* TAB 3: Reviews */}
+              {activeTab === "Reviews" && (
+                <div className="mt-8 sm:mt-10 space-y-8 animate-in fade-in duration-300">
+                  <div>
+                    <h2 className="text-lg sm:text-xl font-bold tracking-tight text-zinc-950">
+                      Student Reviews & Feedback
+                    </h2>
+                    <p className="mt-2 text-xs sm:text-[13.5px] text-zinc-600 font-normal">
+                      See what students who completed this course have to say.
+                    </p>
+                  </div>
+
+                  {/* Overall Rating Box */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-6 rounded-2xl border border-zinc-200/90 bg-zinc-50/60 p-6">
+                    <div className="text-center sm:text-left sm:pr-8 sm:border-r sm:border-zinc-200">
+                      <div className="text-4xl font-black text-zinc-950">
+                        {currentCourse.rating}
+                      </div>
+                      <div className="mt-1 flex items-center justify-center sm:justify-start gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-4 w-4 fill-[#EAB308] text-[#EAB308]" />
+                        ))}
+                      </div>
+                      <p className="mt-1 text-xs text-zinc-500 font-medium">
+                        Based on {currentCourse.reviewsCount} reviews
+                      </p>
+                    </div>
+
+                    <div className="flex-1 space-y-2">
+                      {[
+                        { stars: "5 Stars", pct: "88%" },
+                        { stars: "4 Stars", pct: "10%" },
+                        { stars: "3 Stars", pct: "2%" },
+                        { stars: "2 Stars", pct: "0%" },
+                        { stars: "1 Star", pct: "0%" },
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-3 text-xs">
+                          <span className="w-12 text-zinc-600 font-medium">{item.stars}</span>
+                          <div className="h-2 flex-1 rounded-full bg-zinc-200 overflow-hidden">
+                            <div
+                              className="h-full rounded-full bg-[#EAB308]"
+                              style={{ width: item.pct }}
+                            />
+                          </div>
+                          <span className="w-8 text-right text-zinc-500 font-semibold">{item.pct}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Sample Reviews List */}
+                  <div className="space-y-4">
+                    {[
+                      {
+                        name: "Alex Johnson",
+                        role: "Product Designer at Stripe",
+                        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop",
+                        comment: "This course completely transformed my workflow. The explanations are concise, practical, and immediately applicable to real-world products!",
+                        date: "2 days ago",
+                      },
+                      {
+                        name: "Sarah Chen",
+                        role: "UX Researcher",
+                        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop",
+                        comment: "Best investment I've made for my professional development. The module breakdowns and lesson tracking made it super easy to stay motivated.",
+                        date: "1 week ago",
+                      },
+                      {
+                        name: "David Miller",
+                        role: "Creative Director",
+                        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop",
+                        comment: "Exceptional quality videos and downloadable resources. Highly recommended for anyone looking to level up their craft!",
+                        date: "2 weeks ago",
+                      },
+                    ].map((rev, idx) => (
+                      <div key={idx} className="rounded-2xl border border-zinc-200/80 p-5 bg-white shadow-xs">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <div className="relative h-10 w-10 rounded-full overflow-hidden bg-zinc-200">
+                              <Image src={rev.avatar} alt={rev.name} fill className="object-cover" />
+                            </div>
+                            <div>
+                              <h4 className="text-xs sm:text-sm font-bold text-zinc-950">{rev.name}</h4>
+                              <p className="text-[11px] text-zinc-500">{rev.role}</p>
+                            </div>
+                          </div>
+                          <span className="text-[11px] text-zinc-400">{rev.date}</span>
+                        </div>
+                        <div className="mt-2.5 flex items-center gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="h-3.5 w-3.5 fill-[#EAB308] text-[#EAB308]" />
+                          ))}
+                        </div>
+                        <p className="mt-2.5 text-xs sm:text-[13px] text-zinc-700 leading-relaxed font-normal">
+                          {rev.comment}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Right Sticky Purchase Sidebar */}
